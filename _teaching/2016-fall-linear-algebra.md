@@ -10,7 +10,7 @@ location: "Trieste, IT"
 
 Exercise classes for the BSc course on *Linear algebra* (in Italian).
 
-* [Exercise sheets]{http://agiacche.github.io/files/TA/TutoratoGeometriaFogli}
-* [Plane rotations]{http://agiacche.github.io/files/TA/RotazioniPiano.pdf}
-* [Fibonacci sequence]{http://agiacche.github.io/files/TA/Fibonacci.pdf}
-* [Jordan form]{http://agiacche.github.io/files/TA/FormaJordan.pdf}
+* [Exercise sheets](http://agiacche.github.io/files/TA/TutoratoGeometriaFogli)
+* [Plane rotations](http://agiacche.github.io/files/TA/RotazioniPiano.pdf)
+* [Fibonacci sequence](http://agiacche.github.io/files/TA/Fibonacci.pdf)
+* [Jordan form](http://agiacche.github.io/files/TA/FormaJordan.pdf)

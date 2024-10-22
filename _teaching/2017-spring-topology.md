@@ -10,5 +10,5 @@ location: "Trieste, IT"
 
 Exercise classes for the BSc course on *Topology* (in Italian).
 
-* [Exercise sheets]{http://agiacche.github.io/files/TA/TutoratoTopologiaFogli.pdf}
-* [Topological relations]{http://agiacche.github.io/files/TA/SpaziTopologici.pdf}
+* [Exercise sheets](http://agiacche.github.io/files/TA/TutoratoTopologiaFogli.pdf)
+* [Topological relations](http://agiacche.github.io/files/TA/SpaziTopologici.pdf)
