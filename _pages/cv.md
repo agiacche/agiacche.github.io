@@ -11,8 +11,17 @@ redirect_from:
 
 The CV can be downloaded here. Below is a brief summary.
 
+Work experience
+------
+* Oct 2023–present: 
+  * Postdoctoral Fellow, ETHZ
+  * Supervisor: Rahul Pandharipande
+* Oct 2021–Oct 2023
+  * Postdoctoral Fellow, IPhT
+  * Supervisor: Bertrand Eynard
+
 Education
-======
+------
 * PhD in Mathematics, MPIM, 2021
   * *Geometric and topological recursion and invariants of the moduli space of curves*
   * Supervisor: Gaëtan Borot
@@ -23,29 +32,20 @@ Education
   * *Skein relations and polynomial invariants of knots and links*
   * Supervisor: Bruno Zimmermann
 
-Work experience
-======
-* Oct 2023–present: 
-  * Postdoctoral Fellow, ETHZ
-  * Supervisor: Rahul Pandharipande
-* Oct 2021–Oct 2023
-  * Postdoctoral Fellow, IPhT
-  * Supervisor: Bertrand Eynard
-
 Publications
-======
+------
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
 Teaching
-======
+------
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
 Events
-======
+------
 * School Quantum Geometry, Les Houches, FR (29 July–23 Aug, 2024)
 * School Topological recursion and integrability at Trieste, IT (11–16 Sep, 2023)
 * Conference Moduli spaces: theory and coding at Les Diablerets, CH
@@ -57,7 +57,7 @@ Events
 
 <!--
 Research stays
-======
+------
 * 2024 – University of Edinburgh, University of Tokyo, University of Science and Technology of China
 * 2023 – University of Trieste
 * 2022 – University of Geneva, SISSA, Leiden University, Humboldt University, University of Trieste
@@ -67,18 +67,18 @@ Research stays
 -->
   
 Talks
-======
+------
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
 
 Honours
-======
+------
 * ETH Fellowship: Oct 2023–Sep 2025
-* Oberwolfach Leibniz Graduate Students 2021
+<!-- * Oberwolfach Leibniz Graduate Students 2021 -->
 * Marco Reni prize 2018
-* Friulovest Bank award 2017
+<!-- * Friulovest Bank award 2017 -->
 * SISSA MSc Fellowship: Sep 2015–Sep 2017
-* Friulovest Bank award 2015
-* Best freshman 2012/13
+<!-- * Friulovest Bank award 2015 -->
+* Best freshman, University of Trieste, 2012/13
 * Luciano Fonda BSc Fellowship: Sep 2012–Sep 2015
