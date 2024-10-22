@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "🎶 CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -11,24 +11,24 @@ redirect_from:
 
 Education
 ======
-* Ph.D. in Mathematics, MPIM, 2021
-  * Thesis: Geometric and topological recursion and invariants of the moduli space of curves
-  * Supervisor: Gaëtan Borot
-* M.Sc. in Mathematics, University of Trieste & SISSA, 2017
-  * Thesis: The J-equation on Kähler manifolds and blowups
-  * Supervisor: Jacopo Stoppa
-* B.Sc. in Mathematics, University of Trieste, 2015
-  * Thesis: Skein relations and polynomial invariants of knots and links
-  * Supervisor: Bruno Zimmermann
+* PhD in Mathematics, MPIM, 2021
+  * <sub><sup>*Geometric and topological recursion and invariants of the moduli space of curves*</sup></sub>
+  * <sub><sup>Supervisor: Gaëtan Borot</sup></sub>
+* MSc in Mathematics, University of Trieste & SISSA, 2017
+  * <sub><sup>*The J-equation on Kähler manifolds and blowups*</sup></sub>
+  * <sub><sup>Supervisor: Jacopo Stoppa</sup></sub>
+* BSc in Mathematics, University of Trieste, 2015
+  * <sub><sup>*Skein relations and polynomial invariants of knots and links*</sup></sub>
+  * <sub><sup>Supervisor: Bruno Zimmermann</sup></sub>
 
 Work experience
 ======
-* Oct 2023–present: Postdoctoral Fellow
-  * ETHZ
-  * Supervisor: Rahul Pandharipande
-* Oct 2021–Oct 2023: Postdoctoral Fellow
-  * IPhT
-  * Supervisor: Bertrand Eynard
+* Oct 2023–present: 
+  * <sub><sup>Postdoctoral Fellow, ETHZ</sup></sub>
+  * <sub><sup>Supervisor: Rahul Pandharipande</sup></sub>
+* Oct 2021–Oct 2023
+  * <sub><sup>Postdoctoral Fellow, IPhT</sup></sub>
+  * <sub><sup>Supervisor: Bertrand Eynard</sup></sub>
 
 Publications
 ======
@@ -70,11 +70,11 @@ Talks
 
 Honours
 ======
-* ETH Fellow: Oct 2023–Sep 2025
+* ETH Fellowship: Oct 2023–Sep 2025
 * Oberwolfach Leibniz Graduate Students 2021
 * Marco Reni prize 2018
 * Friulovest Bank award 2017
-* SISSA Master degree's Fellowship: Sep 2015–Sep 2017
+* SISSA MSc Fellowship: Sep 2015–Sep 2017
 * Friulovest Bank award 2015
 * Best freshman 2012/13
-* Collegio Universitario L. Fonda Bachelor degree's Fellowship: Sep 2012–Sep 2015
+* Luciano Fonda BSc Fellowship: Sep 2012–Sep 2015
