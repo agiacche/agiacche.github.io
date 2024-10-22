@@ -87,10 +87,10 @@ Conference “Curve counting theories and related algebraic structures”, Unive
 * Aug 2018, *Detached maps and the topological recursion kernel*.\
 Summer school “Topological recursion", Tübingen University, Tübingen \[[Slides](http://agiacche.github.io/files/talks/2018.08.pdf)\]
 
-Misc
+Miscellaneous
 ------
 * Aug 2023, *Moduli space of Riemann surfaces*.\
-Les Houches Summer School on Quantum Geometry
+Les Houches Summer School on Quantum Geometry \[[Lecture notes](https://arxiv.org/abs/2410.13273)'\]
 * Jul 2023, *Topological recursion*.\
 Online Mathematics and HEP seminar, ICTP Physics Latam \[[Notes](http://agiacche.github.io/files/talks/2023.07.pdf), [Video](https://www.youtube.com/watch?v=WNIjNJ6upz0)\]
 * Mar 2022, *Cohomological field theories and topological recursion*.\
@@ -125,4 +125,4 @@ MPIM, Bonn
 IMPRS seminar, MPIM, Bonn \[[Notes](http://agiacche.github.io/files/open-closedTQFTs.pdf)\]
 * Oct 2017, *The J-equation on Kähler manifolds and blowups*.\
 Lectures by the new IMPRS students, MPIM, Bonn \[[MSc thesis](http://agiacche.github.io/files/MScThesis.pdf)\]
-* Nov 2016, *Supersymmetric quantum mechanics and differential geometry. Geometry and Physics seminar, SISSA, Trieste \[[Notes](http://agiacche.github.io/files/SUSYMorse.pdf), [Slides](http://agiacche.github.io/files/talks/2016.11.pdf)\]
+* Nov 2016, *Supersymmetric quantum mechanics and differential geometry*. Geometry and Physics seminar, SISSA, Trieste \[[Notes](http://agiacche.github.io/files/SUSYMorse.pdf), [Slides](http://agiacche.github.io/files/talks/2016.11.pdf)\]

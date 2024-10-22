@@ -11,7 +11,7 @@ redirect_from:
 
 The [CV](http://agiacche.github.io/files/giacchetto_cv_en.pdf) can be downloaded here. Below is a brief summary.
 
-Work experience
+Employment
 ------
 * Oct 2023–present: 
   * Postdoctoral Fellow, ETHZ
@@ -44,7 +44,7 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
-Events
+Organization of events
 ------
 * School [Quantum Geometry](https://houches24.github.io), Les Houches (29 July–23 Aug, 2024)
 * School [Topological recursion and integrability](https://indico.in2p3.fr/event/29404), Trieste (11–16 Sep, 2023)
