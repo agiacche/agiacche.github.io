@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "🎶 CV"
+title: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,26 +9,28 @@ redirect_from:
 
 {% include base_path %}
 
+The CV can be downloaded here. Below is a brief summary.
+
 Education
 ======
 * PhD in Mathematics, MPIM, 2021
-  * <sub><sup>*Geometric and topological recursion and invariants of the moduli space of curves*</sup></sub>
-  * <sub><sup>Supervisor: Gaëtan Borot</sup></sub>
+  * *Geometric and topological recursion and invariants of the moduli space of curves*
+  * Supervisor: Gaëtan Borot
 * MSc in Mathematics, University of Trieste & SISSA, 2017
-  * <sub><sup>*The J-equation on Kähler manifolds and blowups*</sup></sub>
-  * <sub><sup>Supervisor: Jacopo Stoppa</sup></sub>
+  * *The J-equation on Kähler manifolds and blowups*
+  * Supervisor: Jacopo Stoppa
 * BSc in Mathematics, University of Trieste, 2015
-  * <sub><sup>*Skein relations and polynomial invariants of knots and links*</sup></sub>
-  * <sub><sup>Supervisor: Bruno Zimmermann</sup></sub>
+  * *Skein relations and polynomial invariants of knots and links*
+  * Supervisor: Bruno Zimmermann
 
 Work experience
 ======
 * Oct 2023–present: 
-  * <sub><sup>Postdoctoral Fellow, ETHZ</sup></sub>
-  * <sub><sup>Supervisor: Rahul Pandharipande</sup></sub>
+  * Postdoctoral Fellow, ETHZ
+  * Supervisor: Rahul Pandharipande
 * Oct 2021–Oct 2023
-  * <sub><sup>Postdoctoral Fellow, IPhT</sup></sub>
-  * <sub><sup>Supervisor: Bertrand Eynard</sup></sub>
+  * Postdoctoral Fellow, IPhT
+  * Supervisor: Bertrand Eynard
 
 Publications
 ======
@@ -53,6 +55,7 @@ Events
 * Reading group Integer points in polyhedra at MPIM (Fall 2019)
 * Reading group Geometric recursion at MPIM (Fall 2018)
 
+<!--
 Research stays
 ======
 * 2024 – University of Edinburgh, University of Tokyo, University of Science and Technology of China
@@ -61,6 +64,7 @@ Research stays
 * 2021 – Humboldt University
 * 2020 – University of Melbourne
 * 2019 – Centre for Quantum Mathematics
+-->
   
 Talks
 ======
