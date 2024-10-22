@@ -21,12 +21,12 @@ repository               : "agiacche/agiacche.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile2.jpeg"
   name             : "Alessandro Giacchetto"
   pronouns         : # example: "she/her"  
   bio              : "ETH Fellow and Hermann-Weyl-Instructor"
   location         : "ETH Zürich, Switzerland"
-  employer         : #"ETHZ"
+  employer         : "HG J 16.2 – Rämistrasse 101"
   uri              : # URL
   email            : "alessandro.giacchetto@math.ethz.ch" 
 
