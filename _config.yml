@@ -21,7 +21,7 @@ repository               : "agiacche/agiacche.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile2.jpeg"
+  avatar           : "profile1.jpeg"
   name             : "Alessandro Giacchetto"
   pronouns         : # example: "she/her"  
   bio              : "ETH Fellow and Hermann-Weyl-Instructor"

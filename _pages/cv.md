@@ -11,54 +11,70 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D. in Mathematics, MPIM, 2021
+  * Thesis: Geometric and topological recursion and invariants of the moduli space of curves
+  * Supervisor: Gaëtan Borot
+* M.Sc. in Mathematics, University of Trieste & SISSA, 2017
+  * Thesis: The J-equation on Kähler manifolds and blowups
+  * Supervisor: Jacopo Stoppa
+* B.Sc. in Mathematics, University of Trieste, 2015
+  * Thesis: Skein relations and polynomial invariants of knots and links
+  * Supervisor: Bruno Zimmermann
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Oct 2023–present: Postdoctoral Fellow
+  * ETHZ
+  * Supervisor: Rahul Pandharipande
+* Oct 2021–Oct 2023: Postdoctoral Fellow
+  * IPhT
+  * Supervisor: Bertrand Eynard
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+
+Teaching
+======
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
+Events
+======
+* School Quantum Geometry, Les Houches, FR (29 July–23 Aug, 2024)
+* School Topological recursion and integrability at Trieste, IT (11–16 Sep, 2023)
+* Conference Moduli spaces: theory and coding at Les Diablerets, CH
+* School + workshop TR Salento 2022 at Otranto, IT (5–16 Sep, 2022)
+* Conference Recent Advances on Moduli Spaces of Curves at Leysin, CH
+* On-line reading group Donaldson–Thomas invariants at MPIM (Spring 2020)
+* Reading group Integer points in polyhedra at MPIM (Fall 2019)
+* Reading group Geometric recursion at MPIM (Fall 2018)
+
+Research stays
+======
+* 2024 – University of Edinburgh, University of Tokyo, University of Science and Technology of China
+* 2023 – University of Trieste
+* 2022 – University of Geneva, SISSA, Leiden University, Humboldt University, University of Trieste
+* 2021 – Humboldt University
+* 2020 – University of Melbourne
+* 2019 – Centre for Quantum Mathematics
   
 Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
-  
-Teaching
+
+Honours
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* ETH Fellow: Oct 2023–Sep 2025
+* Oberwolfach Leibniz Graduate Students 2021
+* Marco Reni prize 2018
+* Friulovest Bank award 2017
+* SISSA Master degree's Fellowship: Sep 2015–Sep 2017
+* Friulovest Bank award 2015
+* Best freshman 2012/13
+* Collegio Universitario L. Fonda Bachelor degree's Fellowship: Sep 2012–Sep 2015
