@@ -24,9 +24,9 @@ author:
   avatar           : "profile1.jpeg"
   name             : "Alessandro Giacchetto"
   pronouns         : # example: "she/her"  
-  bio              : "ETH Fellow and Hermann-Weyl-Instructor"
-  location         : "ETH Zürich, Switzerland"
-  employer         : "HG J 16.2 – Rämistrasse 101"
+  bio              : "ETH Fellow, Hermann-Weyl-Instructor"
+  location         : "Zürich, Switzerland"
+  employer         : "ETHZ, HG J 16.2"
   uri              : # URL
   email            : "alessandro.giacchetto@math.ethz.ch" 
 

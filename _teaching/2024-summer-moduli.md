@@ -8,7 +8,7 @@ date: 2024-08-01
 location: "Les Houches, FR"
 ---
 
-A mini-course on the *moduli spaces of Riemann surfaces* held at the Les Houches school *Quantum Geometry (Mathematical Methods for Gravity, Gauge Theories and Non-Perturbative Physics)* in Summer 2024.
+A mini-course on the *moduli spaces of Riemann surfaces* held at the Les Houches school [Quantum Geometry](https://houches24.github.io) in Summer 2024.
 
 Abstract
 ------

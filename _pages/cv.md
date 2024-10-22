@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-The CV can be downloaded here. Below is a brief summary.
+The [CV](http://agiacche.github.io/files/giacchetto_cv_en.pdf) can be downloaded here. Below is a brief summary.
 
 Work experience
 ------
@@ -46,14 +46,14 @@ Teaching
 
 Events
 ------
-* School Quantum Geometry, Les Houches, FR (29 July–23 Aug, 2024)
-* School Topological recursion and integrability at Trieste, IT (11–16 Sep, 2023)
-* Conference Moduli spaces: theory and coding at Les Diablerets, CH
-* School + workshop TR Salento 2022 at Otranto, IT (5–16 Sep, 2022)
-* Conference Recent Advances on Moduli Spaces of Curves at Leysin, CH
-* On-line reading group Donaldson–Thomas invariants at MPIM (Spring 2020)
-* Reading group Integer points in polyhedra at MPIM (Fall 2019)
-* Reading group Geometric recursion at MPIM (Fall 2018)
+* School [Quantum Geometry](https://houches24.github.io), Les Houches (29 July–23 Aug, 2024)
+* School [Topological recursion and integrability](https://indico.in2p3.fr/event/29404), Trieste (11–16 Sep, 2023)
+* Conference [Moduli spaces: theory and coding](https://indico.in2p3.fr/event/28594), Les Diablerets (27 Feb–3 Mar, 2023)
+* School + workshop [TR Salento 2022](https://sites.google.com/view/tr-salento-2022/home), Otranto (5–16 Sep, 2022)
+* Conference [Recent advances on moduli spaces of curves](https://sites.google.com/view/moduli2022/home), Leysin (18–24 March, 2022)
+* On-line reading group [Donaldson–Thomas invariants](https://www.mathematik.hu-berlin.de/de/forschung/forschungsgebiete/mathematische-physik/borot-mp-homepage/online-reading-group-stability-conditions-and-dt-invariants), MPIM (Spring 2020)
+* Reading group [Integer points in polyhedra](https://sites.google.com/view/integerpointsonpolyhedra/home), MPIM (Fall 2019)
+* Reading group [Geometric recursion](https://sites.google.com/view/grlearningseminar/home), MPIM (Fall 2018)
 
 <!--
 Research stays

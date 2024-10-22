@@ -9,3 +9,5 @@ location: "Hiddensee, DE"
 ---
 
 A mini-course on *Hurwitz numbers and Gromov–Witten theory* held at Gaëtan Borot's group retreat in Summer 2022.
+
+[Notes]{http://agiacche.github.io/files/Matamzee2022.pdf}
