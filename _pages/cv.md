@@ -23,7 +23,7 @@ Employment
 Education
 ------
 * PhD in Mathematics, MPIM, 2021
-  * *Geometric and topological recursion and invariants of the moduli space of curves*
+  * *[Geometric and topological recursion and invariants of the moduli space of curves](https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/9385)*
   * Supervisor: Gaëtan Borot
 * MSc in Mathematics, University of Trieste & SISSA, 2017
   * *The J-equation on Kähler manifolds and blowups*
@@ -34,15 +34,67 @@ Education
 
 Publications
 ------
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* The factorial growth of topological recursion  
+<span style="font-size: 0.8em;">with G. Borot, B. Eynard</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2409.17838)\]</span>
+
+* Can transformer do enumerative geometry?  
+<span style="font-size: 0.8em;">with B. Hashemi, R. G. Corominas</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://www.arxiv.org/abs/2408.14915)\]</span>
+
+* Symmetries of F-cohomological field theories and F-topological recursion  
+<span style="font-size: 0.8em;">with G. Borot, G. Umer</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2406.06304)\]</span>
+
+* Length spectrum of large genus random metric maps  
+<span style="font-size: 0.8em;">with S. Barazer, M. Liu</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2312.10517)\]</span>
+
+* Resurgent large genus asymptotics of intersection numbers  
+<span style="font-size: 0.8em;">with B. Eynard, E. Garcia-Failde, P. Gregori, D. Lewański</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2309.03143)\]</span>
+
+* The spin Gromov–Witten/Hurwitz correspondence for $\mathbb{P}^1$  
+<span style="font-size: 0.8em;">with R. Kramer, D. Lewański, A. Sauvaget</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2208.03259), JEMS\]</span>
+
+* Relations on $\overline{\mathal{M}}_{g,n}$ and the negative $r$-spin Witten conjecture  
+<span style="font-size: 0.8em;">with N. K. Chidambaram, E. Garcia-Failde</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2205.15621)\]</span>
+
+* Shifted Witten classes and topological recursion  
+<span style="font-size: 0.8em;">with S. Charbonnier, N. K. Chidambaram, E. Garcia-Failde</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2203.16523), [Trans. Amer. Math. Soc.](https://doi.org/10.1090/tran/9046)\]</span>
+
+* An intersection-theoretic proof of the Harer–Zagier formula  
+<span style="font-size: 0.8em;">with D. Lewański, P. Norbury</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2112.11137), [Algebraic Geom.](https://doi.org/10.14231/AG-2023-004)\]</span>
+
+* Around the combinatorial unit ball of measured foliations on bordered surfaces  
+<span style="font-size: 0.8em;">with G. Borot, S. Charbonnier, V. Delecroix, C. Wheeler</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2110.12538), [Int. Math. Res. Not.](https://doi.org/10.1093/imrn/rnac231)\]</span>
+
+* A new spin on Hurwitz theory and ELSV via theta characteristic  
+<span style="font-size: 0.8em;">with R. Kramer, D. Lewański</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2112.11137)\]</span>
+
+* On the Kontsevich geometry of the combinatorial Teichmüller space  
+<span style="font-size: 0.8em;">with J. E. Andersen, G. Borot, S. Charbonnier, D. Lewański, C. Wheeler</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/2010.11806)\]</span>
+
+* Appendix for Masur–Veech volumes and intersection theory, the principal strata of quadratic differentials  
+<span style="font-size: 0.8em;">with G. Borot, D. Lewański</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/1912.02267), [Duke Math. J.](https://doi.org/10.1215/00127094-2022-0063)\]</span>
+
+* Topological recursion for Masur–Veech volumes  
+<span style="font-size: 0.8em;">with J. E. Andersen, G. Borot, S. Charbonnier, V. Delecroix, D. Lewański, C. Wheeler</span>  
+<span style="font-size: 0.8em;">\[[arXiv](https://arxiv.org/abs/1905.10352), [J. London Math. Soc.](https://doi.org/10.1112/jlms.12686)\]</span>
 
 Teaching
 ------
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* [Riemann surfaces](https://agiacche.github.io/teaching/2024-spring-RiemannSurfaces), lecturer, Sping 2024, ETHZ
+* Topology, teaching assistant, Spring 2017, UniTS
+* Linear algebra, teaching assistant, Fall 2016, UniTS
 
 Organization of events
 ------
@@ -65,12 +117,6 @@ Research stays
 * 2020 – University of Melbourne
 * 2019 – Centre for Quantum Mathematics
 -->
-  
-Talks
-------
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
 
 Honours
 ------
