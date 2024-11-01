@@ -50,7 +50,7 @@ Publications and preprints
 <span style="font-size: 0.8em;">with B. Eynard, E. Garcia-Failde, P. Gregori, D. Lewański. \[[arXiv](https://arxiv.org/abs/2309.03143)\]</span>
 
 * *The spin Gromov–Witten/Hurwitz correspondence for \\(\mathbb{P}^1\\)*  
-<span style="font-size: 0.8em;">with R. Kramer, D. Lewański, A. Sauvaget. \[[arXiv](https://arxiv.org/abs/2208.03259) | [JEMS](https://ems.press/journals/jems/articles/forthcoming)\]</span>
+<span style="font-size: 0.8em;">with R. Kramer, D. Lewański, A. Sauvaget. \[[arXiv](https://arxiv.org/abs/2208.03259) | [J. Eur. Math.](https://ems.press/journals/jems/articles/forthcoming)\]</span>
 
 * *Relations on \\(\overline{\mathcal{M}}_{g,n}\\) and the negative \\(r\\)-spin Witten conjecture*  
 <span style="font-size: 0.8em;">with N. K. Chidambaram, E. Garcia-Failde. \[[arXiv](https://arxiv.org/abs/2205.15621)\]</span>

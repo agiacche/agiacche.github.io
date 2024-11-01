@@ -40,9 +40,9 @@ var addressPoints = [
       7.602835223434801
   ],
   [
-      "IPhT, Gif-sur-Yvettes, FR",
-      49.113950121620185,
-      4.2728753006933005
+      "IPhT, Gif-sur-Yvette, FR",
+      48.707716799914685,
+      2.1483511938007656
   ],
   [
       "ETH, Zurich, CH",
@@ -111,8 +111,8 @@ var addressPoints = [
   ],
   [
       "EPFL, Lausanne, CH",
-      46.629685320409465,
-      6.606307871305682
+      46.51930214159704,
+      6.56672585581609
   ],
   [
       "University of Edinburgh, Edinburgh, GB",
