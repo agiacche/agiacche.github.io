@@ -90,7 +90,7 @@ Summer school “Topological recursion", Tübingen University, Tübingen \[[Slid
 Miscellaneous
 ------
 * Aug 2023, *Moduli space of Riemann surfaces*.\
-Les Houches Summer School on Quantum Geometry \[[Lecture notes](https://arxiv.org/abs/2410.13273)'\]
+Les Houches Summer School on Quantum Geometry \[[Lecture notes](https://arxiv.org/abs/2410.13273)\]
 * Jul 2023, *Topological recursion*.\
 Online Mathematics and HEP seminar, ICTP Physics Latam \[[Notes](http://agiacche.github.io/files/talks/2023.07.pdf), [Video](https://www.youtube.com/watch?v=WNIjNJ6upz0)\]
 * Mar 2022, *Cohomological field theories and topological recursion*.\
