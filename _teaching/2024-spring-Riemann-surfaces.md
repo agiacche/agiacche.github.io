@@ -4,6 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2024-spring-RiemannSurfaces
 venue: "ETHZ"
+semester: "Sping 2024"
 date: 2024-02-01
 location: "Zürich, CH"
 ---
