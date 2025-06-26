@@ -38,16 +38,65 @@
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
-    {% if post.collection == 'teaching' %}
+    {% if post.category == 'teaching' %}
       <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
 
-    {% elsif post.collection == 'publications' %}
+    {% elsif post.category == 'publications' %}
       <p>
         {% if post.authors %}
-          with {{ post.authors }}<br>
+          <span style="display: inline-block; margin-bottom: 4px;">
+            with {{ post.authors }}
+          </span><br>
         {% endif %}
-        <i>{{ post.journal }}</i> <strong>{{ post.volume }}</strong> {% if post.issue %}({{ post.issue }}){% endif %} 
+        <i>{{ post.journal }}</i> {{ post.volume }}{% if post.issue %}.{{ post.issue }}{% endif %} ({{ post.year }})&nbsp;
+
+        <span style="display: inline-flex; gap: 10px;">
+          {% if post.arxiv %}
+            <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="color: black; text-decoration: none;">
+              <i class="ai ai-arxiv"></i>
+            </a>
+          {% endif %}
+          {% if post.doi %}
+            <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer" aria-label="DOI link" style="color: black; text-decoration: none;">
+              <i class="ai ai-doi"></i>
+            </a>
+          {% endif %}
+        </span>
+      </p>
+
+    {% elsif post.category == 'preprint' %}
+      <p>
+        {% if post.authors %}
+          <span style="display: inline-block; margin-bottom: 4px;">
+            with {{ post.authors }}
+          </span><br>
+        {% endif %}
         ({{ post.year }})&nbsp;
+
+        <span style="display: inline-flex; gap: 10px;">
+          {% if post.arxiv %}
+            <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="color: black; text-decoration: none;">
+              <i class="ai ai-arxiv"></i>
+            </a>
+          {% endif %}
+        </span>
+      </p>
+
+    {% elsif post.collection == 'book' %}
+      <p>
+        {% if post.coauthors %}
+          <span style="display: inline-block; margin-bottom: 4px;">
+            with {{ post.coauthors }}
+          </span><br>
+        {% endif %}
+
+        {% if post.series %}
+          <span style="display: inline-block; margin-bottom: 4px;">
+            In: <i>{{ post.series }}</i>
+          </span><br>
+        {% endif %}
+
+        <i>{{ post.journal }}</i> {{ post.volume }}{% if post.issue %}.{{ post.issue }}{% endif %} ({{ post.year }})&nbsp;
 
         <span style="display: inline-flex; gap: 10px;">
           {% if post.arxiv %}
