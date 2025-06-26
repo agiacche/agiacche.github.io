@@ -18,10 +18,6 @@ author_profile: true
   {% for category in site.publication_category %}
     {% assign title_shown = false %}
 
-    {% if category[0] == "book" %}
-      <p>Below are selected book chapters and lecture notes.</p>
-    {% endif %}
-
     {% for post in site.publications reversed %}
       {% if post.category != category[0] %}
         {% continue %}
