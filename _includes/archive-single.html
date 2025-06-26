@@ -42,27 +42,7 @@
       <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
 
     {% elsif post.collection == 'publications' %}
-      <p>
-        {% if post.journal %}
-          Published in <i>{{ post.journal }}</i>
-        {% elsif post.venue %}
-          Published in <i>{{ post.venue }}</i>
-        {% endif %}
-
-        {% if post.volume %}
-          , <strong>{{ post.volume }}</strong>
-        {% endif %}
-
-        {% if post.issue %}
-          ({{ post.issue }})
-        {% endif %}
-
-        {% if post.year %}
-          , {{ post.year }}
-        {% elsif post.date %}
-          , {{ post.date | date: "%Y" }}
-        {% endif %}
-      </p>
+      <p><i>{{ post.journal }}</i>, <strong>{{ post.volume }}</strong>{% if post.issue %} {{ post.issue }}{% endif %}, {{ post.year }}</p>
 
       {% if post.arxiv %}
         <p>
