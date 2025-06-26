@@ -42,23 +42,26 @@
       <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
 
     {% elsif post.collection == 'publications' %}
-      <p><i>{{ post.journal }}</i>, <strong>{{ post.volume }}</strong>{% if post.issue %} {{ post.issue }}{% endif %}, {{ post.year }}</p>
+      <p>
+        <i>{{ post.journal }}</i>,
+        <strong>{{ post.volume }}</strong>{% if post.issue %}({{ post.issue }}){% endif %},
+        {{ post.year }}
+      </p>
 
-      {% if post.arxiv %}
-        <p>
-          <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer">
-            arXiv:{{ post.arxiv }}
+      <p>
+        {% if post.arxiv %}
+          <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" style="margin-right: 10px;" aria-label="arXiv link">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
           </a>
-        </p>
-      {% endif %}
+        {% endif %}
 
-      {% if post.doi %}
-        <p>
-          <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer">
-            DOI: {{ post.doi }}
+        {% if post.doi %}
+          <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer" aria-label="DOI link">
+            <i class="fa fa-link" aria-hidden="true"></i>
           </a>
-        </p>
-      {% endif %}
+        {% endif %}
+      </p>
+    {% endif %}
 
     {% elsif post.date %}
       <p class="page__date">
