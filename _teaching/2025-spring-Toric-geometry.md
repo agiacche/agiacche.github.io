@@ -1,50 +1,40 @@
 ---
-title: "Riemann Surfaces"
+title: "Toric Geometry"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2024-spring-RiemannSurfaces
+permalink: /teaching/2024-spring-ToricGeometry
 venue: "ETHZ"
-date: 2024-02-01
+date: 2025-02-01
 location: "Zürich, CH"
 ---
 
-A first introduction to the theory of *Riemann surfaces*. These are beautiful objects that sit at the intersection of algebra, geometry, and analysis. We covered the theorems of Riemann–Hurwitz, Riemann–Roch, and Abeli–Jacobi, as well as the basics of Hurwitz theory.
+Toric varieties provide a rich class of examples in algebraic geometry that bridge combinatorics and geometry, making them an ideal starting point for exploring the interplay between these fields. We will introduce toric varieties, study their combinatorial and abstract structures, and examine their basic geometry, including singularities, Picard groups, and cohomology.
 
-**Schedule.** Thursdays 16:15–18:00, HG D 5.2.
+**Schedule.** Thursdays 16:15–18:00, HG E 41.
 
-**Office hours.** By appointment (office HG J 16.2).
+**Office hours.** Wednesday, 15:30–18:00 or by appointment (office HG J 16.2).
 
-**Prerequisites.** Theory of functions of one complex variable, basics of topology. Familiarity with the theory of smooth manifolds and algebraic topology would be useful, but not necessary. 
+**Prerequisites.** Some background in algebraic geometry is highly desirable. In the absence of an algebraic geometry background, knowledge of at least one of differential, complex, or symplectic geometry is required.
 
 **References.**
-* [Notes of the course](http://agiacche.github.io/files/riemann/RiemannSurfacesLectureNotes.pdf)
-* E. Arbarello, M. Cornalba, P. A. Griffiths, J. Harris. Geometry of Algebraic Curves, Volume 1. Springer–Verlag, 1985
-* R. Cavalieri, E. Miles. Riemann Surfaces and Algebraic Curves. Cambridge University Press, 2016
-* O. Forster. Lectures on Riemann Surfaces. Springer–Verlag, 1981
+* [Notes of the course](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet1.pdf)
+* J.-P. Brasselet. Introduction to Toric Varieties, Course notes, 2008
+* W. Fulton. Introduction to Toric Varieties. Princeton University Press, 1993
+* D. A. Cox, J. B. Little, H. K. Schenck. Toric Varieties. American Mathematical Society, 2011
 
-**Course log.** A brief description of each lecture's content, together with exercises and solutions.
-* 22 Feb 2024. Presentation of the course. Real smooth vs. analytic. Holomorphic functions.\
-[Exercise sheet 1](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet1.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions1.pdf)
-* 29 Feb 2024. The problem of multi-valued functions. Manifolds. Definition of Riemann surfaces.\
-[Exercise sheet 2](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet2.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions2.pdf)
-* 7 Mar 2024. Maps between manifolds. Classification of topological compact surfaces.\
-[Exercise sheet 3](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet3.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions3.pdf)
-* 14 Mar 2024. Classification of complex tori, plane affine and projective curves.\
-[Exercise sheet 4](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet4.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions4.pdf)
-* 21 Mar 2024. Elliptic curves. Multiplicity of holomorphic maps at a point.
-* 28 Mar 2024. Riemann–Hurwitz formula, genus-degree formula, meromorphic functions.\
-[Exercise sheet 5](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet5.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions5.pdf)
-* 11 Apr 2024. Meromorphic functions on the Riemann sphere and the tori.\
-[Exercise sheet 6](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet6.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions6.pdf)
-* 18 Apr 2024. Divisors, principal divisors, Picard group, linear spaces of meromorphic functions.\
-[Exercise sheet 7](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet7.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions7.pdf)
-* 25 Apr 2024. Finiteness theorem. Meromorphic forms, canonical divisors, Serre duality.\
-[Exercise sheet 8](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet8.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions8.pdf)
-* 2 May 2024. Residue theorem. Riemann–Roch theorem.\
-[Exercise sheet 9](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet9.pdf) (solutions can be found in the notes)
-* 16 May, 2024. Abel–Jacobi theory.
-* 23 May, 2024. Abel–Jacobi theory (conclusion), Hurwitz numbers, monodromy representation.
-* 30 May, 2024. Hurwitz numbers and permutations.\
-[Exercise sheet 10](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheet10.pdf), [solutions](http://agiacche.github.io/files/riemann/RiemannSurfacesExerciseSheetSolutions10.pdf)
+**Course log.** A brief description of each lecture's content.
+* 20 Feb 2025. Organization of the seminar. Introduction and motivation.
+* 27 Feb 2025. Cones, faces, monoids. Algebraic varieties.
+* 6 Mar 2025. Affine toric varieties [interactive example: double cone].
+* 13 Mar 2025. From fans to toric varieties.
+* 20 Mar 2025. Orbits and their closure.
+* 27 Mar 2025. Geometric properties [example of complete, non-polytopal fan, by Sirawit]. From toric varieties to fans.
+* 3 Apr 2025. Polytopes. Divisors.
+* 10 Apr 2025. Class and Picard groups. Introduction to sheaf cohomology.
+* 17 Apr 2025.  Class and Picard groups revisited. Line bundles on toric varieties.
+* 8 May 2025. Singularities and their resolutions.
+* 15 May 2025. Chow groups, characteristic classes, Riemann–Roch and Pick's formula.
+* 22 May 2025. Stanley's theorem.
 
-**Exam.** The exam is a 20 minute oral exam. The first question on your exam will be chosen randomly from this [collection of questions](RiemannSurfacesExamQuestions).
+**Exercises.**
+\[[Sheet 1](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet1.pdf)\] \[[Sheet 2](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet2.pdf)\] \[[Sheet 3](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet3.pdf)\] \[[Sheet 4](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet4.pdf)\] \[[Sheet 5](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet5.pdf)\]
