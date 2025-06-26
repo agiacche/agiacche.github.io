@@ -43,20 +43,17 @@
 
     {% elsif post.collection == 'publications' %}
       <p>
-        <i>{{ post.journal }}</i>,
-        <strong>{{ post.volume }}</strong>{% if post.issue %}({{ post.issue }}){% endif %},
-        {{ post.year }}
-      </p>
-
-      <p>
+        <i>{{ post.journal }}</i> <strong>{{ post.volume }}</strong> {% if post.issue %}({{ post.issue }}){% endif %} 
+        ({{ post.year }})
+        
         {% if post.arxiv %}
-          <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="margin-right: 10px;">
+          <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="margin-right: 10px; color: black;">
             <i class="ai ai-arxiv"></i>
           </a>
         {% endif %}
 
         {% if post.doi %}
-          <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer" aria-label="DOI link">
+          <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer" aria-label="DOI link" style="color: black;">
             <i class="ai ai-doi"></i>
           </a>
         {% endif %}
