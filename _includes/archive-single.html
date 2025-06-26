@@ -50,14 +50,14 @@
 
       <p>
         {% if post.arxiv %}
-          <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" style="margin-right: 10px;" aria-label="arXiv link">
-            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+          <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="margin-right: 10px;">
+            <i class="ai ai-arxiv"></i>
           </a>
         {% endif %}
 
         {% if post.doi %}
           <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer" aria-label="DOI link">
-            <i class="fa fa-link" aria-hidden="true"></i>
+            <i class="ai ai-doi"></i>
           </a>
         {% endif %}
       </p>
