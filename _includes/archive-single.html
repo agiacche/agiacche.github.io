@@ -43,10 +43,13 @@
 
     {% elsif post.collection == 'publications' %}
       <p>
+        {% if post.authors %}
+          with {{ post.authors }}<br>
+        {% endif %}
         <i>{{ post.journal }}</i> <strong>{{ post.volume }}</strong> {% if post.issue %}({{ post.issue }}){% endif %} 
         ({{ post.year }})&nbsp;
 
-        <div style="display: inline-flex; gap: 10px;">
+        <span style="display: inline-flex; gap: 10px;">
           {% if post.arxiv %}
             <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="color: black; text-decoration: none;">
               <i class="ai ai-arxiv"></i>
@@ -57,7 +60,7 @@
               <i class="ai ai-doi"></i>
             </a>
           {% endif %}
-        </div>
+        </span>
       </p>
 
     {% elsif post.date %}
