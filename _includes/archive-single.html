@@ -38,10 +38,10 @@
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
-    {% if post.category == 'teaching' %}
+    {% if post.collection == 'teaching' %}
       <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
 
-    {% elsif post.category == 'publications' %}
+    {% elsif post.collection == 'publications' and post.category == 'published'%}
       <p>
         {% if post.authors %}
           <span style="display: inline-block; margin-bottom: 4px;">
@@ -64,7 +64,7 @@
         </span>
       </p>
 
-    {% elsif post.category == 'preprint' %}
+    {% elsif post.collection == 'publications' and post.category == 'preprint'%}
       <p>
         {% if post.authors %}
           <span style="display: inline-block; margin-bottom: 4px;">
@@ -82,7 +82,7 @@
         </span>
       </p>
 
-    {% elsif post.collection == 'book' %}
+    {% elsif post.collection == 'publications' and post.category == 'book'%}
       <p>
         {% if post.coauthors %}
           <span style="display: inline-block; margin-bottom: 4px;">
