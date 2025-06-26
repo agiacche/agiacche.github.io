@@ -14,11 +14,11 @@ The [CV](http://agiacche.github.io/files/giacchetto_cv_en.pdf) can be downloaded
 Employment
 ------
 * Oct 2023–present: 
-  * Postdoctoral Fellow, ETHZ
-  * Supervisor: Rahul Pandharipande
+  * ETH Fellow & HW Instructor, ETHZ
+  * Mentor: Rahul Pandharipande
 * Oct 2021–Oct 2023
   * Postdoctoral Fellow, IPhT
-  * Supervisor: Bertrand Eynard
+  * Postdoctoral: Bertrand Eynard
 
 Education
 ------
@@ -34,26 +34,29 @@ Education
 
 Publications and preprints
 ------
+* *Theta classes: generalized topological recursion, integrability and \\(\mathcal{W}\\)-constraints*  
+<span style="font-size: 0.8em;">with V. Bouchard, N. K. Chidambaram, S. Shadrin. \[[arXiv](https://arxiv.org/abs/2505.11291)\]</span>
+
 * *The factorial growth of topological recursion*  
-<span style="font-size: 0.8em;">with G. Borot, B. Eynard. \[[arXiv](https://arxiv.org/abs/2409.17838)\]</span>
+<span style="font-size: 0.8em;">with G. Borot, B. Eynard. \[[arXiv](https://arxiv.org/abs/2409.17838) | [Lett. Math. Phys.](https://doi.org/10.1007/s11005-025-01950-z)\]</span>
 
 * *Can transformer do enumerative geometry?*  
-<span style="font-size: 0.8em;">with B. Hashemi, R. G. Corominas. \[[arXiv](https://www.arxiv.org/abs/2408.14915)\]</span>
+<span style="font-size: 0.8em;">with B. Hashemi, R. G. Corominas. \[[arXiv](https://www.arxiv.org/abs/2408.14915) | [ICLR25](https://openreview.net/forum?id=4X9RpKH4Ls)\]</span>
 
 * *Symmetries of F-cohomological field theories and F-topological recursion*  
 <span style="font-size: 0.8em;">with G. Borot, G. Umer. \[[arXiv](https://arxiv.org/abs/2406.06304)\]</span>
 
 * *Length spectrum of large genus random metric maps*  
-<span style="font-size: 0.8em;">with S. Barazer, M. Liu. \[[arXiv](https://arxiv.org/abs/2312.10517)\]</span>
+<span style="font-size: 0.8em;">with S. Barazer, M. Liu. \[[arXiv](https://arxiv.org/abs/2312.10517) | [Forum Math. Sigma](https://doi.org/10.1017/fms.2025.31)\]</span>
 
 * *Resurgent large genus asymptotics of intersection numbers*  
 <span style="font-size: 0.8em;">with B. Eynard, E. Garcia-Failde, P. Gregori, D. Lewański. \[[arXiv](https://arxiv.org/abs/2309.03143)\]</span>
 
 * *The spin Gromov–Witten/Hurwitz correspondence for \\(\mathbb{P}^1\\)*  
-<span style="font-size: 0.8em;">with R. Kramer, D. Lewański, A. Sauvaget. \[[arXiv](https://arxiv.org/abs/2208.03259) | [J. Eur. Math.](https://ems.press/journals/jems/articles/forthcoming)\]</span>
+<span style="font-size: 0.8em;">with R. Kramer, D. Lewański, A. Sauvaget. \[[arXiv](https://arxiv.org/abs/2208.03259) | [J. Eur. Math.](https://doi.org/10.4171/jems/1588)\]</span>
 
 * *Relations on \\(\overline{\mathcal{M}}_{g,n}\\) and the negative \\(r\\)-spin Witten conjecture*  
-<span style="font-size: 0.8em;">with N. K. Chidambaram, E. Garcia-Failde. \[[arXiv](https://arxiv.org/abs/2205.15621)\]</span>
+<span style="font-size: 0.8em;">with N. K. Chidambaram, E. Garcia-Failde. \[[arXiv](https://arxiv.org/abs/2205.15621) | [Invent. Math.](https://arxiv.org/abs/2205.15621)\]</span>
 
 * *Shifted Witten classes and topological recursion*  
 <span style="font-size: 0.8em;">with S. Charbonnier, N. K. Chidambaram, E. Garcia-Failde. \[[arXiv](https://arxiv.org/abs/2203.16523) | [Trans. Amer. Math. Soc.](https://doi.org/10.1090/tran/9046)\]</span>
@@ -65,7 +68,7 @@ Publications and preprints
 <span style="font-size: 0.8em;">with G. Borot, S. Charbonnier, V. Delecroix, C. Wheeler. \[[arXiv](https://arxiv.org/abs/2110.12538) | [Int. Math. Res. Not.](https://doi.org/10.1093/imrn/rnac231)\]</span>
 
 * *A new spin on Hurwitz theory and ELSV via theta characteristic*  
-<span style="font-size: 0.8em;">with R. Kramer, D. Lewański. \[[arXiv](https://arxiv.org/abs/2112.11137)\]</span>
+<span style="font-size: 0.8em;">with R. Kramer, D. Lewański. \[[arXiv](https://arxiv.org/abs/2112.11137) | [Selecta Math.](https://arxiv.org/abs/2112.11137)\]</span>
 
 * *On the Kontsevich geometry of the combinatorial Teichmüller space*  
 <span style="font-size: 0.8em;">with J. E. Andersen, G. Borot, S. Charbonnier, D. Lewański, C. Wheeler. \[[arXiv](https://arxiv.org/abs/2010.11806)\]</span>
@@ -78,12 +81,14 @@ Publications and preprints
 
 Teaching
 ------
+* [Toric geometry](https://agiacche.github.io/teaching/2025-spring-ToricGeometry), lecturer, Sping 2025, ETHZ
 * [Riemann surfaces](https://agiacche.github.io/teaching/2024-spring-RiemannSurfaces), lecturer, Sping 2024, ETHZ
 * Topology, teaching assistant, Spring 2017, UniTS
 * Linear algebra, teaching assistant, Fall 2016, UniTS
 
 Organization of events
 ------
+* Workshop [Refinement in Enumerative Geometry and Physics](https://www.icts.res.in/current-and-upcoming-events), Bangalore (22 Jun–3 Jul, 2026)
 * School [Quantum Geometry](https://houches24.github.io), Les Houches (29 July–23 Aug, 2024)
 * School [Topological recursion and integrability](https://indico.in2p3.fr/event/29404), Trieste (11–16 Sep, 2023)
 * Conference [Moduli spaces: theory and coding](https://indico.in2p3.fr/event/28594), Les Diablerets (27 Feb–3 Mar, 2023)
