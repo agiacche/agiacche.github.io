@@ -43,9 +43,9 @@
 
     {% elsif post.collection == 'publications' and post.category == 'published'%}
       <p>
-        {% if post.authors %}
+        {% if post.coauthors %}
           <span style="display: inline-block; margin-bottom: 4px;">
-            with {{ post.authors }}
+            with {{ post.coauthors }}
           </span><br>
         {% endif %}
         {% if post.note %}{{ post.note }} {% endif %}<i>{{ post.journal }}</i> {{ post.volume }}{% if post.issue %}.{{ post.issue }}{% endif %} ({{ post.year }})&nbsp;
@@ -66,9 +66,9 @@
 
     {% elsif post.collection == 'publications' and post.category == 'preprint'%}
       <p>
-        {% if post.authors %}
+        {% if post.coauthors %}
           <span style="display: inline-block; margin-bottom: 4px;">
-            with {{ post.authors }}
+            with {{ post.coauthors }}
           </span><br>
         {% endif %}
         {% if post.note %}{{ post.note }} {% endif %}({{ post.year }})&nbsp;
