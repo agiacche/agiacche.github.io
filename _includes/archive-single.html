@@ -48,7 +48,7 @@
             with {{ post.authors }}
           </span><br>
         {% endif %}
-        <i>{{ post.journal }}</i> {{ post.volume }}{% if post.issue %}.{{ post.issue }}{% endif %} ({{ post.year }})&nbsp;
+        {% if post.note %}{{ post.note }} {% endif %}<i>{{ post.journal }}</i> {{ post.volume }}{% if post.issue %}.{{ post.issue }}{% endif %} ({{ post.year }})&nbsp;
 
         <span style="display: inline-flex; gap: 10px;">
           {% if post.arxiv %}
@@ -71,7 +71,7 @@
             with {{ post.authors }}
           </span><br>
         {% endif %}
-        ({{ post.year }})&nbsp;
+        {% if post.note %}{{ post.note }} {% endif %}({{ post.year }})&nbsp;
 
         <span style="display: inline-flex; gap: 10px;">
           {% if post.arxiv %}
