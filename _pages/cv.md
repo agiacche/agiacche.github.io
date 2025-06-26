@@ -44,7 +44,7 @@ Publications and preprints
 <span style="font-size: 0.8em;">with B. Hashemi, R. G. Corominas. \[[arXiv](https://www.arxiv.org/abs/2408.14915) | [ICLR25](https://openreview.net/forum?id=4X9RpKH4Ls)\]</span>
 
 * *Symmetries of F-cohomological field theories and F-topological recursion*  
-<span style="font-size: 0.8em;">with G. Borot, G. Umer. \[[arXiv](https://arxiv.org/abs/2406.06304)\]</span>
+<span style="font-size: 0.8em;">with G. Borot, G. Umer. \[[arXiv](https://arxiv.org/abs/2406.06304) | [Commun. Math. Phys.](https://arxiv.org/abs/2406.06304)\]</span>
 
 * *Length spectrum of large genus random metric maps*  
 <span style="font-size: 0.8em;">with S. Barazer, M. Liu. \[[arXiv](https://arxiv.org/abs/2312.10517) | [Forum Math. Sigma](https://doi.org/10.1017/fms.2025.31)\]</span>
@@ -78,6 +78,12 @@ Publications and preprints
 
 * *Topological recursion for Masur–Veech volumes*  
 <span style="font-size: 0.8em;">with J. E. Andersen, G. Borot, S. Charbonnier, V. Delecroix, D. Lewański, C. Wheeler. \[[arXiv](https://arxiv.org/abs/1905.10352) | [J. London Math. Soc.](https://doi.org/10.1112/jlms.12686)\]</span>
+
+Book chapters
+------
+* *Les Houches lecture notes on moduli spaces of Riemann surfaces*  
+<span style="font-size: 0.8em;">with D. Lewański. Part of *Les Houches Summer School Lecture Notes - 2024-08: Quantum Geometry* \[[arXiv](https://arxiv.org/abs/2505.11291) | [SciPost Lect. Notes](https://scipost.org/submissions/scipost_202504_00028v1/)\]</span>
+
 
 Teaching
 ------

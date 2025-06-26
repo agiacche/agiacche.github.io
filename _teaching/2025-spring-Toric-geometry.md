@@ -17,7 +17,7 @@ Toric varieties provide a rich class of examples in algebraic geometry that brid
 **Prerequisites.** Some background in algebraic geometry is highly desirable. In the absence of an algebraic geometry background, knowledge of at least one of differential, complex, or symplectic geometry is required.
 
 **References.**
-* [Notes of the course](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet1.pdf)
+* [Notes of the course](http://agiacche.github.io/files/toric/ToricGeometryLectureNotes.pdf)
 * J.-P. Brasselet. Introduction to Toric Varieties, Course notes, 2008
 * W. Fulton. Introduction to Toric Varieties. Princeton University Press, 1993
 * D. A. Cox, J. B. Little, H. K. Schenck. Toric Varieties. American Mathematical Society, 2011
@@ -37,4 +37,4 @@ Toric varieties provide a rich class of examples in algebraic geometry that brid
 * 22 May 2025. Stanley's theorem.
 
 **Exercises.**
-\[[Sheet 1](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet1.pdf)\] \[[Sheet 2](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet2.pdf)\] \[[Sheet 3](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet3.pdf)\] \[[Sheet 4](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet4.pdf)\] \[[Sheet 5](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet5.pdf)\]
+\[[Sheet 1](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet1.pdf)\] \[[Sheet 2](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet2.pdf)\] \[[Sheet 3](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet3.pdf)\] \[[Sheet 4](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet4.pdf)\] \[[Sheet 5](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet5.pdf)\] \[[Sheet 6](http://agiacche.github.io/files/toric/ToricGeometryExerciseSheet6.pdf)\]
