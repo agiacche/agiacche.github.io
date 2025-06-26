@@ -6,15 +6,22 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">
+    You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.
+  </div>
 {% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
+<!-- Publication categories grouping -->
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
+  {% for category in site.publication_category %}
     {% assign title_shown = false %}
+
+    {% if category[0] == "book" %}
+      <p>Below are selected book chapters and lecture notes.</p>
+    {% endif %}
+
     {% for post in site.publications reversed %}
       {% if post.category != category[0] %}
         {% continue %}
@@ -31,6 +38,3 @@ author_profile: true
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
-
-
-

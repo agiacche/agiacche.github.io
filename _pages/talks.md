@@ -17,11 +17,11 @@ author_profile: true
 
 Research talk
 ------
-* June 2025, *A new spin on Gromov–Witten and Hurwitz*.\
-<span style="font-size: 0.8em;">Workshop "Spin structures in enumerative geometry", Universiteit Leiden</span>
-* June 2025, *Theta classes: topological recursion, r-KdV, W-constraints*.\
+* June 2025, *A new spin on Gromov–Witten and Hurwitz*.
+<span style="font-size: 0.8em;">Workshop "Spin Structures in Enumerative Geometry", Universiteit Leiden</span>
+* June 2025, *Theta classes: topological recursion, r-KdV, W-constraints*.
 <span style="font-size: 0.8em;">Workshop "New Trends in Moduli, Integrability and Deformations", University of Padova, Padova</span>
-* May 2025, *Resurgence and large genus asymptotics of intersection numbers*. 
+* May 2025, *Resurgence and large genus asymptotics of intersection numbers*.
 <span style="font-size: 0.8em;">LaBRI seminar, Bordeaux</span>
 * Apr 2025, *On the spin GW/Hurwitz correspondence*. 
 <span style="font-size: 0.8em;">Algebraic Geometry online seminar, Bogotá</span>

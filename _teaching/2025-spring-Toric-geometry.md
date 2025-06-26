@@ -2,7 +2,7 @@
 title: "Toric Geometry"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2024-spring-ToricGeometry
+permalink: /teaching/2025-spring-ToricGeometry
 venue: "ETHZ"
 date: 2025-02-01
 location: "Zürich, CH"
@@ -18,17 +18,17 @@ Toric varieties provide a rich class of examples in algebraic geometry that brid
 
 **References.**
 * [Notes of the course](http://agiacche.github.io/files/toric/ToricGeometryLectureNotes.pdf)
-* J.-P. Brasselet. Introduction to Toric Varieties, Course notes, 2008
-* W. Fulton. Introduction to Toric Varieties. Princeton University Press, 1993
-* D. A. Cox, J. B. Little, H. K. Schenck. Toric Varieties. American Mathematical Society, 2011
+* J.-P. Brasselet. *Introduction to Toric Varieties*, Course notes, 2008
+* W. Fulton. *Introduction to Toric Varieties*. Princeton University Press, 1993
+* D. A. Cox, J. B. Little, H. K. Schenck. *Toric Varieties*. American Mathematical Society, 2011
 
 **Course log.** A brief description of each lecture's content.
 * 20 Feb 2025. Organization of the seminar. Introduction and motivation.
 * 27 Feb 2025. Cones, faces, monoids. Algebraic varieties.
-* 6 Mar 2025. Affine toric varieties [interactive example: double cone].
+* 6 Mar 2025. Affine toric varieties \[interactive example: [double cone](http://agiacche.github.io/files/toric/double_cone.nb)\].
 * 13 Mar 2025. From fans to toric varieties.
 * 20 Mar 2025. Orbits and their closure.
-* 27 Mar 2025. Geometric properties [example of complete, non-polytopal fan, by Sirawit]. From toric varieties to fans.
+* 27 Mar 2025. Geometric properties \[example of [complete, non-polytopal fan](https://cones-demo.netlify.app/), by Sirawit\]. From toric varieties to fans.
 * 3 Apr 2025. Polytopes. Divisors.
 * 10 Apr 2025. Class and Picard groups. Introduction to sheaf cohomology.
 * 17 Apr 2025.  Class and Picard groups revisited. Line bundles on toric varieties.

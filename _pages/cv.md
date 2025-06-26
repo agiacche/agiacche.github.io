@@ -14,7 +14,7 @@ The [CV](http://agiacche.github.io/files/giacchetto_cv_en.pdf) can be downloaded
 Employment
 ------
 * Oct 2023–present: 
-  * ETH Fellow & HW Instructor, ETHZ
+  * ETH Fellow & Hermann-Weyl-Instructor, ETHZ
   * Mentor: Rahul Pandharipande
 * Oct 2021–Oct 2023
   * Postdoctoral Fellow, IPhT
@@ -26,10 +26,10 @@ Education
   * *[Geometric and topological recursion and invariants of the moduli space of curves](https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/9385)*
   * Supervisor: Gaëtan Borot
 * **MSc** in Mathematics, University of Trieste & SISSA, 2017
-  * *The J-equation on Kähler manifolds and blowups*
+  * *[The J-equation on Kähler manifolds and blowups](http://agiacche.github.io/files/MScThesis.pdf)*
   * Supervisor: Jacopo Stoppa
 * **BSc** in Mathematics, University of Trieste, 2015
-  * *Skein relations and polynomial invariants of knots and links*
+  * *[Skein relations and polynomial invariants of knots and links](http://agiacche.github.io/files/BScThesis.pdf)*
   * Supervisor: Bruno Zimmermann
 
 Publications and preprints
