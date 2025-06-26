@@ -75,12 +75,9 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  preprint:
-    title: "Preprints"
-  published:
-    title: "Journal articles"
-  book:
-    title: "Book chapters"
+  - [ "preprint", title: "Preprints" ]
+  - [ "published", title: "Journal articles" ]
+  - [ "book", title: "Book chapters" ]
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -271,7 +268,7 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comment: true
+      comments: true
   # _talks
   - scope:
       path: ""
