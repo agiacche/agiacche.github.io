@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Vitae"
+title: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,75 +9,56 @@ redirect_from:
 
 {% include base_path %}
 
-*Note: This CV is often woefully out of date. For a more complete list of publications, 
-I recommend checking out my ORCID or Google Scholar profiles (linked in the sidebar).*
+Education
+======
+* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* M.S. in Jekyll, GitHub University, 2014
+* B.S. in GitHub, GitHub University, 2012
 
-## Education
+Work experience
+======
+* Spring 2024: Academic Pages Collaborator
+  * GitHub University
+  * Duties includes: Updates and improvements to template
+  * Supervisor: The Users
 
-<p style="margin-left: 40px"><b>Ph.D., Cognitive and Information Sciences</b>
-<br>University of California, Merced
-<br><i>August 2011 - December 2015</i></p>
+* Fall 2015: Research Assistant
+  * GitHub University
+  * Duties included: Merging pull requests
+  * Supervisor: Professor Hub
 
-## Employment
+* Summer 2015: Research Assistant
+  * GitHub University
+  * Duties included: Tagging issues
+  * Supervisor: Professor Git
+  
+Skills
+======
+* Skill 1
+* Skill 2
+  * Sub-skill 2.1
+  * Sub-skill 2.2
+  * Sub-skill 2.3
+* Skill 3
 
-<p style="margin-left: 40px"><b>Associate Professor</b>
-<br>Department of Psychological Sciences
-<br>University of Connecticut
-<br><i>August 2024 — present</i></p>
-
-<p style="margin-left: 40px"><b>Assistant Professor</b>
-<br>Department of Psychological Sciences
-<br>University of Connecticut
-<br><i>August 2018 — August 2024</i></p>
-
-<p style="margin-left: 40px"><b>Moore-Sloan Data Science Fellow</b>
-<br>Berkeley Institute for Data Science
-<br>University of California, Berkeley
-<br><i>August 2016 — July 2018</i></p>
-
-<p style="margin-left: 40px"><b>Postdoctoral Scholar</b>
-<br>Institute of Cognitive and Brain Sciences
-<br>University of California, Berkeley
-<br><i>January 2016 — July 2018</i></p>
-
-## Peer-Reviewed Journal Publications
-
-Mentees’ names underlined. Asterisk indicates dual first-author position.
-Open access articles or preprints <nobr>(<i class="ai ai-fw ai-open-access-square"></i>)</nobr>
-are linked below; all other PDFs <nobr>(<i class="fas fa-file-pdf" aria-hidden="true"></i>)</nobr>
-are provided for **personal use only.** Supplementary materials on
-GitHub <nobr>(<i class="fab fa-fw fa-github" aria-hidden="true"></i>)</nobr> and
-OSF <nobr>(<i class="ai ai-fw ai-osf"></i>)</nobr> for each publication are linked below the
-citation.
-
-{% for post in site.publications reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}
-
-## Refereed Conference Proceedings
-
-Mentees’ names underlined. Asterisk indicates dual first-author position.
-Open access articles or preprints <nobr>(<i class="ai ai-fw ai-open-access-square"></i>)</nobr>
-are linked below; all other PDFs <nobr>(<i class="fab fa-file-pdf-o" aria-hidden="true"></i>)</nobr>
-are provided for **personal use only.** Supplementary materials on
-GitHub <nobr>(<i class="fab fa-fw fa-github" aria-hidden="true"></i>)</nobr> and
-OSF <nobr>(<i class="ai ai-fw ai-osf"></i>)</nobr> for each publication are linked below the
-citation.
-
-{% for post in site.proceedings reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}
-
-## Book Chapters, Technical Reports, and Other Publications
-
-Mentees’ names underlined. Asterisk indicates dual first-author position.
-Open access articles or preprints <nobr>(<i class="ai ai-fw ai-open-access-square"></i>)</nobr>
-are linked below; all other PDFs <nobr>(<i class="fas fa-file-pdf" aria-hidden="true"></i>)</nobr>
-are provided for **personal use only.** Supplementary materials on
-GitHub <nobr>(<i class="fab fa-fw fa-github" aria-hidden="true"></i>)</nobr> and
-OSF <nobr>(<i class="ai ai-fw ai-osf"></i>)</nobr> for each publication are linked below the
-citation.
-
-{% for post in site.chapters reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}
+Publications
+======
+  <ul>{% for post in site.publications reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+  
+Talks
+======
+  <ul>{% for post in site.talks reversed %}
+    {% include archive-single-talk-cv.html  %}
+  {% endfor %}</ul>
+  
+Teaching
+======
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+  
+Service and leadership
+======
+* Currently signed in to 43 different slack teams
