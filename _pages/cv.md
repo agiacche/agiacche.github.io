@@ -18,7 +18,7 @@ Employment
   * Mentor: Rahul Pandharipande
 * Oct 2021–Oct 2023
   * Postdoctoral Fellow, IPhT
-  * Postdoctoral: Bertrand Eynard
+  * Mentor: Bertrand Eynard
 
 Education
 ------
