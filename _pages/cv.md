@@ -23,7 +23,7 @@ Employment
 Education
 ------
 * **PhD** in Mathematics, MPIM, 2021
-  * *[Geometric and topological recursion and invariants of the moduli space of curves](https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/9385)*
+  * *[Geometric and topological recursion and invariants of the moduli space of curves](http://agiacche.github.io/files/PhDThesis.pdf)*
   * Supervisor: Gaëtan Borot
 * **MSc** in Mathematics, University of Trieste & SISSA, 2017
   * *[The J-equation on Kähler manifolds and blowups](http://agiacche.github.io/files/MScThesis.pdf)*

@@ -1,6 +1,6 @@
 ---
 permalink: /terms/
-title: "Terms and Privacy Policy"
+title: "🔏 Terms and Privacy Policy"
 modified: 2025-06-27
 ---
 
