@@ -38,7 +38,7 @@ Publications and preprints
   {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
   {% for pub in sorted_pubs %}
     <li>
-      <em>{{ pub.title }}</em><br />
+      <em>{{ pub.title | markdownify | remove: '<p>' | remove: '</p>' }}</em><br />
       <span style="font-size: 0.8em;">
         {% if pub.coauthors %}
           with {{ pub.coauthors }}.
