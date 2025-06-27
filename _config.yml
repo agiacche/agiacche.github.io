@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "About"
+title                    : "AG"
 title_separator          : "-"
 name                     : &name "Alessandro Giacchetto"
 description              : &description "Mathematician"
