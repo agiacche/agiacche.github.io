@@ -11,32 +11,14 @@ main:
   - title: "About"
     url: /about/
 
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Talks"
+    url: /talks/
+
+  - title: "Teaching"
+   url: /teaching/
+
   - title: "CV"
     url: /cv/
-
-  - title: "Resources"
-    url: /resources/
-
-  - title: "Miscellany"
-    url: /miscellany/
-
-  - title: "the dyscord lab"
-    url: https://dyscord-lab.github.io/
-
-  # - title: "Publications"
-  #   url: /publications/
-  #
-  # - title: "Talks"
-  #   url: /talks/
-
-  # - title: "Teaching"
-  #   url: /teaching/
-  #
-  # - title: "Portfolio"
-  #   url: /portfolio/
-  #
-  # - title: "Blog Posts"
-  #   url: /year-archive/
-
-  # - title: "Conference Proceedings"
-  #   url: /proceedings/
