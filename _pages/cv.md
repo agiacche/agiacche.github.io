@@ -37,26 +37,26 @@ Publications and preprints
 <ul>
   {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
   {% for pub in sorted_pubs %}
-  * *{{ pub.title }}*  
-    <span style="font-size: 0.8em;">
-      {% if pub.coauthors %}
-      with {{ pub.coauthors }}.
-      {% endif %}
-      [
-      <a href="https://arxiv.org/abs/{{ pub.arxiv }}" target="_blank" rel="noopener">arXiv</a>
-      {% if pub.category == "published" or pub.category == "book" %}
-        {% if pub.journal %}
-          | <a href="{% if pub.doi and pub.doi != '0000' %}https://doi.org/{{ pub.doi }}{% else %}https://arxiv.org/abs/{{ pub.arxiv }}{% endif %}" target="_blank" rel="noopener">
-            {{ pub.journal }}
-          </a>
+    <li>
+      <em>{{ pub.title }}</em><br />
+      <span style="font-size: 0.8em;">
+        {% if pub.coauthors %}
+          with {{ pub.coauthors }}.
         {% endif %}
-      {% endif %}
-      ]
-    </span>
-
+        [
+        <a href="https://arxiv.org/abs/{{ pub.arxiv }}" target="_blank" rel="noopener">arXiv</a>
+        {% if pub.category == "published" or pub.category == "book" %}
+          {% if pub.journal %}
+            | <a href="{% if pub.doi and pub.doi != '0000' %}https://doi.org/{{ pub.doi }}{% else %}https://arxiv.org/abs/{{ pub.arxiv }}{% endif %}" target="_blank" rel="noopener">
+              {{ pub.journal }}
+            </a>
+          {% endif %}
+        {% endif %}
+        ]
+      </span>
+    </li>
   {% endfor %}
 </ul>
-
 
 Teaching
 ------
