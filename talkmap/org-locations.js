@@ -1,22 +1,152 @@
 var addressPoints = [
   [
-    "Talk 2 on Relevant Topic in Your Field<br />London School of Testing; London, UK",
-    51.4893335,
-    -0.14405508452768728
+      "MPIM, Bonn, DE",
+      50.73496882720792,
+      7.099181842048396
   ],
   [
-    "Tutorial 1 on Relevant Topic in Your Field<br />UC-Berkeley Institute for Testing Science; Berkeley, CA, USA",
-    37.8708393,
-    -122.272863
+      "Tübingen University, Tübingen, DE",
+      48.53738307201129,
+      9.036097974037357
   ],
   [
-    "Conference Proceeding talk 3 on Relevant Topic in Your Field<br />Testing Institute of America 2014 Annual Conference; Los Angeles, CA, USA",
-    34.0536909,
-    -118.242766
+      "University of Leeds, Leeds, GB",
+      53.80578488524657,
+      -1.5545980573563383
   ],
   [
-    "Talk 1 on Relevant Topic in Your Field<br />UC San Francisco, Department of Testing; San Francisco, CA, USA",
-    37.7792588,
-    -122.4193286
+      "IMSA, Miami, US",
+      25.721642966334986,
+      -80.27935247574118
+  ],
+  [
+      "Monash University, Melbourne, AU",
+      -37.90882997217093,
+      145.13017639560792
+  ],
+  [
+      "University of Melbourne, Melbourne, AU",
+      -37.798046218701195,
+      144.96409339409539
+  ],
+  [
+      "Sorbonne University, Paris, FR",
+      48.84726662022111,
+      2.354808583936002
+  ],
+  [
+      "WWU Münster, Münster, DE",
+      51.966535997930905,
+      7.602835223434801
+  ],
+  [
+      "IPhT, Gif-sur-Yvette, FR",
+      48.707716799914685,
+      2.1483511938007656
+  ],
+  [
+      "ETH, Zurich, CH",
+      47.37663601466998,
+      8.548089311751815
+  ],
+  [
+      "LaBRI, Bordeaux, FR",
+      44.808622182432245,
+      -0.5970845369276648
+  ],
+  [
+      "IHES, Bures-sur-Yvette, FR",
+      48.69505414293693,
+      2.1694827216400703
+  ],
+  [
+      "SISSA, Trieste, IT",
+      45.67994745160871,
+      13.775018567520135
+  ],
+  [
+      "University of Trieste, Trieste, IT",
+      45.65994289548943,
+      13.79607817394917
+  ],
+  [
+      "Universiteit Leiden, Leiden, NL",
+      52.16767710268338,
+      4.460443813754266
+  ],
+  [
+      "USTC, Hefei, CN",
+      31.840953049735916,
+      117.27106935101142
+  ],
+  [
+      "SDU, Odense, DK",
+      55.367306746961304,
+      10.430395957850749
+  ],
+  [
+      "Otranto, IT",
+      40.15388270602141,
+      18.487522446202462
+  ],
+  [
+      "Cergy Paris Université, Cergy, FR",
+      49.03932116139495,
+      2.0766919019342223
+  ],
+  [
+      "OIST, Okinawa, JP",
+      26.465145367270477,
+      127.83049420706782
+  ],
+  [
+      "University of Tokyo, Tokyo, JP",
+      35.661550213662046,
+      139.69650507367197
+  ],
+  [
+      "CIRM, Marseille, FR",
+      43.23014134789116,
+      5.443397442328404
+  ],
+  [
+      "EPFL, Lausanne, CH",
+      46.51930214159704,
+      6.56672585581609
+  ],
+  [
+      "University of Edinburgh, Edinburgh, GB",
+      55.94540943962695,
+      -3.186279587219101
+  ],
+  [
+      "ICTP, Trieste, IT",
+      45.703805304951416,
+      13.718965236828097
+  ],
+  [
+      "RIMS, Kyoto, JP",
+      35.030413966707144,
+      135.78657488767178
+  ],
+  [
+      "Les Houches, FR",
+      45.90495259433637,
+      6.772834704915796
+  ],
+  [
+      "Les Diablerets, CH",
+      46.346905899168064,
+      7.159150446047194
+  ],
+  [
+      "Obergurgl, AT",
+      46.867410277899495,
+      11.025420703369921
+  ],
+  [
+      "University of Padua, IT",
+      45.411217126131724,
+      11.887718802738151
   ]
 ];
