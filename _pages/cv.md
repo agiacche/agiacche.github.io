@@ -34,55 +34,29 @@ Education
 
 Publications and preprints
 ------
-* *Theta classes: generalized topological recursion, integrability and \\(\mathcal{W}\\)-constraints*  
-<span style="font-size: 0.8em;">with V. Bouchard, N. K. Chidambaram, S. Shadrin. \[[arXiv](https://arxiv.org/abs/2505.11291)\]</span>
-
-* *The factorial growth of topological recursion*  
-<span style="font-size: 0.8em;">with G. Borot, B. Eynard. \[[arXiv](https://arxiv.org/abs/2409.17838) | [Lett. Math. Phys.](https://doi.org/10.1007/s11005-025-01950-z)\]</span>
-
-* *Can transformer do enumerative geometry?*  
-<span style="font-size: 0.8em;">with B. Hashemi, R. G. Corominas. \[[arXiv](https://www.arxiv.org/abs/2408.14915) | [ICLR25](https://openreview.net/forum?id=4X9RpKH4Ls)\]</span>
-
-* *Symmetries of F-cohomological field theories and F-topological recursion*  
-<span style="font-size: 0.8em;">with G. Borot, G. Umer. \[[arXiv](https://arxiv.org/abs/2406.06304) | [Commun. Math. Phys.](https://arxiv.org/abs/2406.06304)\]</span>
-
-* *Length spectrum of large genus random metric maps*  
-<span style="font-size: 0.8em;">with S. Barazer, M. Liu. \[[arXiv](https://arxiv.org/abs/2312.10517) | [Forum Math. Sigma](https://doi.org/10.1017/fms.2025.31)\]</span>
-
-* *Resurgent large genus asymptotics of intersection numbers*  
-<span style="font-size: 0.8em;">with B. Eynard, E. Garcia-Failde, P. Gregori, D. Lewański. \[[arXiv](https://arxiv.org/abs/2309.03143)\]</span>
-
-* *The spin Gromov–Witten/Hurwitz correspondence for \\(\mathbb{P}^1\\)*  
-<span style="font-size: 0.8em;">with R. Kramer, D. Lewański, A. Sauvaget. \[[arXiv](https://arxiv.org/abs/2208.03259) | [J. Eur. Math.](https://doi.org/10.4171/jems/1588)\]</span>
-
-* *Relations on \\(\overline{\mathcal{M}}_{g,n}\\) and the negative \\(r\\)-spin Witten conjecture*  
-<span style="font-size: 0.8em;">with N. K. Chidambaram, E. Garcia-Failde. \[[arXiv](https://arxiv.org/abs/2205.15621) | [Invent. Math.](https://arxiv.org/abs/2205.15621)\]</span>
-
-* *Shifted Witten classes and topological recursion*  
-<span style="font-size: 0.8em;">with S. Charbonnier, N. K. Chidambaram, E. Garcia-Failde. \[[arXiv](https://arxiv.org/abs/2203.16523) | [Trans. Amer. Math. Soc.](https://doi.org/10.1090/tran/9046)\]</span>
-
-* *An intersection-theoretic proof of the Harer–Zagier formula*  
-<span style="font-size: 0.8em;">with D. Lewański, P. Norbury. \[[arXiv](https://arxiv.org/abs/2112.11137) | [Algebraic Geom.](https://doi.org/10.14231/AG-2023-004)\]</span>
-
-* *Around the combinatorial unit ball of measured foliations on bordered surfaces*  
-<span style="font-size: 0.8em;">with G. Borot, S. Charbonnier, V. Delecroix, C. Wheeler. \[[arXiv](https://arxiv.org/abs/2110.12538) | [Int. Math. Res. Not.](https://doi.org/10.1093/imrn/rnac231)\]</span>
-
-* *A new spin on Hurwitz theory and ELSV via theta characteristic*  
-<span style="font-size: 0.8em;">with R. Kramer, D. Lewański. \[[arXiv](https://arxiv.org/abs/2112.11137) | [Selecta Math.](https://arxiv.org/abs/2112.11137)\]</span>
-
-* *On the Kontsevich geometry of the combinatorial Teichmüller space*  
-<span style="font-size: 0.8em;">with J. E. Andersen, G. Borot, S. Charbonnier, D. Lewański, C. Wheeler. \[[arXiv](https://arxiv.org/abs/2010.11806)\]</span>
-
-* Appendix for *Masur–Veech volumes and intersection theory, the principal strata of quadratic differentials*  
-<span style="font-size: 0.8em;">with G. Borot, D. Lewański. \[[arXiv](https://arxiv.org/abs/1912.02267) | [Duke Math. J.](https://doi.org/10.1215/00127094-2022-0063)\]</span>
-
-* *Topological recursion for Masur–Veech volumes*  
-<span style="font-size: 0.8em;">with J. E. Andersen, G. Borot, S. Charbonnier, V. Delecroix, D. Lewański, C. Wheeler. \[[arXiv](https://arxiv.org/abs/1905.10352) | [J. London Math. Soc.](https://doi.org/10.1112/jlms.12686)\]</span>
-
-Book chapters
-------
-* *Les Houches lecture notes on moduli spaces of Riemann surfaces*  
-<span style="font-size: 0.8em;">with D. Lewański. Part of *Les Houches Summer School Lecture Notes - 2024-08: Quantum Geometry* \[[arXiv](https://arxiv.org/abs/2505.11291) | [SciPost Lect. Notes](https://scipost.org/submissions/scipost_202504_00028v1/)\]</span>
+<ul>
+  {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+  {% for pub in sorted_pubs %}
+    <li>
+      <em>{{ pub.title }}</em><br />
+      {% if pub.coauthors %}
+        {{ pub.coauthors }}. 
+      {% endif %}
+      <span style="font-size: 0.8em;">
+        [
+        <a href="https://arxiv.org/abs/{{ pub.arxiv }}" target="_blank" rel="noopener">arXiv</a>
+        {% if pub.category == "published" or pub.category == "book" %}
+          {% if pub.journal %}
+            | <a href="{% if pub.doi and pub.doi != '0000' %}https://doi.org/{{ pub.doi }}{% else %}# {% endif %}" target="_blank" rel="noopener">
+              {{ pub.journal }}
+            </a>
+          {% endif %}
+        {% endif %}
+        ]
+      </span>
+    </li>
+  {% endfor %}
+</ul>
 
 
 Teaching
