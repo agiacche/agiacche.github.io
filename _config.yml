@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Alessandro's homepage"
+title                    : "About"
 title_separator          : "-"
 name                     : &name "Alessandro Giacchetto"
-description              : &description "personal description"
+description              : &description "Mathematician"
 url                      : https://agiacche.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "agiacche/agiacche.github.io"
@@ -23,7 +23,7 @@ author:
   # Biographic information
   avatar           : "profile1.jpeg"
   name             : "Alessandro Giacchetto"
-  pronouns         : # example: "she/her"  
+  pronouns         : # "he/hir"  
   bio              : "ETH Fellow, Hermann-Weyl-Instructor"
   location         : "Zürich, Switzerland"
   employer         : "ETHZ, HG J 16.2"
