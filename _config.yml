@@ -8,11 +8,12 @@
 
 # Basic Site Settings
 locale                   : "en-US"
+site_theme               : "default"
 title                    : "About"
 title_separator          : "-"
 name                     : &name "Alessandro Giacchetto"
 description              : &description "Mathematician"
-url                      : https://agiacche.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://agiacche.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "agiacche/agiacche.github.io"
 
@@ -31,12 +32,15 @@ author:
   email            : "alessandro.giacchetto@math.ethz.ch" 
 
   # Academic websites
+  academia         : # URL
   arxiv            : "https://arxiv.org/a/giacchetto_a_1.html"
   googlescholar    : "https://scholar.google.com/citations?user=_LgBhlkAAAAJ&hl"
   impactstory      : # URL
   orcid            : "https://orcid.org/0000-0001-8415-5066"
   semantic         : # URL
+  pubmed           : # URL
   researchgate     : # URL
+  scopus           : # URL
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
@@ -46,11 +50,40 @@ author:
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
+  # Social media
+  bluesky          : # Username
+  facebook         : # Username
+  flickr           : # Username
+  foursquare       : # Username
+  goodreads        : # Username
+  google_plus      : # Username
+  keybase          : # Username
+  instagram        : # Username
+  lastfm           : # Username
+  linkedin         : # Username
+  mastodon         : # URL
+  medium           : # URL
+  pinterest        : # Username
+  soundcloud       : # Username
+  steam            : # Username
+  telegram         : # URL
+  tumblr           : # Username
+  twitter          : # Username for X / Twitter
+  vine             : # Username
+  weibo            : # Username
+  wikipedia        : # Username
+  xing             : # Username
+  youtube          : # Username
+  zhihu            : # Username
+
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  - [ "preprint", title: "Preprints" ]
-  - [ "published", title: "Journal articles" ]
-  - [ "book", title: "Book chapters" ]
+  books:
+    title: 'Book Chapters'
+  manuscripts:
+    title: 'Journal Articles'    
+  preprints:
+    title: 'Preprints'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -58,7 +91,7 @@ breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : true #change to true to add link to talkmap on talks page
+talkmap_link             : true      #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -86,7 +119,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : true     # change to true to hide the RSS feed in the footer
+  hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 
@@ -104,7 +137,8 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 :  # Social media default site image
+og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -241,7 +275,7 @@ defaults:
       layout: single
       author_profile: false
       share: false
-      comments: false
+      comment: false
   # _talks
   - scope:
       path: ""
@@ -271,6 +305,7 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
   - jemoji
 
 # Mimic GitHub Pages with --safe
@@ -279,6 +314,7 @@ whitelist:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
   - jemoji
 
 
