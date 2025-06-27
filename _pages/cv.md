@@ -31,6 +31,7 @@ Education
 * **BSc** in Mathematics, University of Trieste, 2015
   * *[Skein relations and polynomial invariants of knots and links](http://agiacche.github.io/files/BScThesis.pdf)*
   * Supervisor: Bruno Zimmermann
+
 Publications and preprints
 ------
 <ul>{% for post in site.publications reversed %}
