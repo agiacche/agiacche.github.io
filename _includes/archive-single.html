@@ -60,6 +60,16 @@
               <i class="ai ai-doi"></i>
             </a>
           {% endif %}
+          {% if post.url %}
+            <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer" aria-label="Link" style="color: currentColor; text-decoration: none;">
+              <i class="ai ai-open-access"></i>
+            </a>
+          {% endif %}
+          {% if post.git %}
+            <a href="https://github.com/{{ post.git }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub link" style="color: currentColor; text-decoration: none;">
+              <i class="fab fa-github"></i>
+            </a>
+          {% endif %}
         </span>
       </p>
 
@@ -80,6 +90,16 @@
               <i class="ai ai-doi"></i>
             </a>
           {% endif %}
+          {% if post.url %}
+            <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer" aria-label="Link" style="color: currentColor; text-decoration: none;">
+              <i class="ai ai-open-access"></i>
+            </a>
+          {% endif %}
+          {% if post.git %}
+            <a href="https://github.com/{{ post.git }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub link" style="color: currentColor; text-decoration: none;">
+              <i class="fab fa-github"></i>
+            </a>
+          {% endif %}
         </span>
       </p>
 
@@ -93,6 +113,16 @@
           {% if post.arxiv %}
             <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="color: currentColor; text-decoration: none;">
               <i class="ai ai-arxiv"></i>
+            </a>
+          {% endif %}
+          {% if post.url %}
+            <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer" aria-label="Link" style="color: currentColor; text-decoration: none;">
+              <i class="ai ai-open-access"></i>
+            </a>
+          {% endif %}
+          {% if post.git %}
+            <a href="https://github.com/{{ post.git }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub link" style="color: currentColor; text-decoration: none;">
+              <i class="fab fa-github"></i>
             </a>
           {% endif %}
         </span>
