@@ -8,7 +8,6 @@ redirect_from:
 ---
 
 {% include base_path %}
-
 {% include toc %}
 
 The [CV](http://agiacche.github.io/files/giacchetto_cv_en.pdf) can be downloaded here. Below is a brief summary.
