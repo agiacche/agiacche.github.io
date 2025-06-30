@@ -6,7 +6,20 @@ author_profile: true
 ---
 
 {% include base_path %}
-{% include toc %}
+<!-- Custom TOC for dynamic page -->
+<aside class="sidebar__right sticky">
+  <nav class="toc">
+    <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Contents</h4></header>
+    <ul class="toc__menu">
+      {% if site.publication_category %}
+        {% for category in site.publication_category %}
+      <li><a href="#{{ category[1].title | slugify }}" class="nav__link">{{ category[1].title }}</a></li>
+        {% endfor %}
+      {% endif %}
+      <li><a href="#collaborators" class="nav__link">Collaborators</a></li>
+    </ul>
+  </nav>
+</aside>
 
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
