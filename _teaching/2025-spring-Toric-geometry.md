@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2025-spring-ToricGeometry
 venue: "ETHZ"
-semester: "Sping 2025"
+semester: "Spring 2025"
 date: 2025-02-01
 location: "Zürich, CH"
 ---

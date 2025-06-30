@@ -1,6 +1,7 @@
 ---
 permalink: /terms/
 title: "🔏 Terms and Privacy Policy"
+title_tag: "Terms and Privacy Policy"
 ---
 
 {% include base_path %}

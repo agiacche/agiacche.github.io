@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "🧭 Sitemap"
+title_tag: "Sitemap"
 permalink: /sitemap/
 author_profile: true
 ---

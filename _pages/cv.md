@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "👨🏻‍🎓 CV"
+title_tag: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,6 +10,8 @@ redirect_from:
 
 {% include base_path %}
 {% include toc %}
+
+<div style="margin-top: 2em;"></div>
 
 The [CV](http://agiacche.github.io/files/giacchetto_cv_en.pdf) can be downloaded here. Below is a brief summary.
 

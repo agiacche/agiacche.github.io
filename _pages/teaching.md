@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "📚 Teaching"
+title_tag: "Teaching"
 permalink: /teaching/
 author_profile: true
 ---

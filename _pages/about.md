@@ -1,6 +1,8 @@
 ---
 permalink: /
 title: "👋🏻 Hello there, I'm Alessandro"
+title_tag: "Home"
+nav_title: "Home"
 author_profile: true
 redirect_from: 
   - /about/
