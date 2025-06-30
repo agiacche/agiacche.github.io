@@ -48,9 +48,16 @@ Publications and preprints
         <a href="https://arxiv.org/abs/{{ pub.arxiv }}" target="_blank" rel="noopener">arXiv</a>
         {% if pub.category == "published" or pub.category == "book" %}
           {% if pub.journal %}
-            | <a href="{% if pub.doi %}https://doi.org/{{ pub.doi }}{% elseif pub.open %}{{ pub.open }}{% else %}https://arxiv.org/abs/{{ pub.arxiv }}{% endif %}" target="_blank" rel="noopener">
-              {{ pub.journal }}
-            </a>
+            {% if pub.doi %}
+              {% assign pub_link = "https://doi.org/" | append: pub.doi %}
+            {% elsif pub.open %}
+              {% assign pub_link = pub.open %}
+            {% else %}
+              {% assign pub_link = "https://arxiv.org/abs/" | append: pub.arxiv %}
+            {% endif %}
+            | <a href="{{ pub_link }}" target="_blank" rel="noopener">
+                {{ pub.journal }}
+              </a>
           {% endif %}
         {% endif %}
         ]
