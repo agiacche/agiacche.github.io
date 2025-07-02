@@ -15,16 +15,19 @@ author_profile: true
 
 Misc
 ------
-
-* Moduli spaces of Riemann surfaces  
-<span style="font-size: 0.8em;">Mini-course held at the Les Houches school [Quantum Geometry](https://houches24.github.io) in Summer 2024.</span>  
-<span style="font-size: 0.8em;">[Lecture notes](https://arxiv.org/abs/2410.13273), [exercises](http://agiacche.github.io/files/ModuliExercises.pdf)</span>
-* Hurwitz numbers and Gromov–Witten theory  
-<span style="font-size: 0.8em;">Mini-course held at Gaëtan Borot's group retreat in Summer 2022.</span>  
-<span style="font-size: 0.8em;">[Notes](http://agiacche.github.io/files/Matamzee2022.pdf)</span>
-* Topology  
-<span style="font-size: 0.8em;">Exercise classes, UniTS, Spring 2017.</span>  
-<span style="font-size: 0.8em;">[Exercise sheets](http://agiacche.github.io/files/TA/TutoratoTopologiaFogli.pdf), [topological relations](http://agiacche.github.io/files/TA/SpaziTopologici.pdf)</span>
-* Linear algebra  
-<span style="font-size: 0.8em;">Exercise classes, UniTS, Fall 2016.</span>  
-<span style="font-size: 0.8em;">[Exercise sheets](http://agiacche.github.io/files/TA/TutoratoGeometriaFogli), [plane rotations](http://agiacche.github.io/files/TA/RotazioniPiano.pdf), [Fibonacci sequence](http://agiacche.github.io/files/TA/Fibonacci.pdf), [Jordan form](http://agiacche.github.io/files/TA/FormaJordan.pdf)</span>
+<ul>
+  {% assign misc_items = site.teaching_misc | sort: "date" | reverse %}
+  {% for item in misc_items %}
+    <li>
+      <strong>{{ item.title }}</strong><br />
+      <span style="font-size: 0.8em;">{{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}, {{ item.venue }}, {{ item.semester }}</span><br />
+      {% if item.resources %}
+        <span style="font-size: 0.8em;">
+          {% for res in item.resources %}
+            <a href="{{ res.url }}" target="_blank">{{ res.label }}</a>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

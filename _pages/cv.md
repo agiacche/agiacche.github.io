@@ -27,13 +27,13 @@ Employment
 Education
 ------
 * **PhD** in Mathematics, MPIM, 2021
-  * *[Geometric and topological recursion and invariants of the moduli space of curves](http://agiacche.github.io/files/PhDThesis.pdf)*
+  * *[Geometric and topological recursion and invariants of the moduli space of curves](http://agiacche.github.io/files/ThesisPhD.pdf)*
   * Supervisor: Gaëtan Borot
 * **MSc** in Mathematics, University of Trieste & SISSA, 2017
-  * *[The J-equation on Kähler manifolds and blowups](http://agiacche.github.io/files/MScThesis.pdf)*
+  * *[The J-equation on Kähler manifolds and blowups](http://agiacche.github.io/files/ThesisMSc.pdf)*
   * Supervisor: Jacopo Stoppa
 * **BSc** in Mathematics, University of Trieste, 2015
-  * *[Skein relations and polynomial invariants of knots and links](http://agiacche.github.io/files/BScThesis.pdf)*
+  * *[Skein relations and polynomial invariants of knots and links](http://agiacche.github.io/files/ThesisBSc.pdf)*
   * Supervisor: Bruno Zimmermann
 
 Publications and preprints
@@ -58,9 +58,7 @@ Publications and preprints
             {% else %}
               {% assign pub_link = "https://arxiv.org/abs/" | append: pub.arxiv %}
             {% endif %}
-            | <a href="{{ pub_link }}" target="_blank" rel="noopener">
-                {{ pub.journal }}
-              </a>
+            | <a href="{{ pub_link }}" target="_blank" rel="noopener">{{ pub.journal }}</a>
           {% endif %}
         {% endif %}
         ]
@@ -71,21 +69,36 @@ Publications and preprints
   
 Teaching
 ------
-<ul>{% for post in site.teaching reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
+<ul>
+  {% assign combined_teaching = site.teaching | concat: site.teaching_misc %}
+  {% assign sorted_teaching = combined_teaching | sort: 'date' | reverse %}
+  
+  {% for item in sorted_teaching %}
+    <li>
+      {% if item.permalink %}
+        <em><a href="{{ item.permalink }}">{{ item.title }}</a></em>,
+      {% else %}
+        <em>{{ item.title }}</em>,
+      {% endif %}
+      {% if item.role %}{{ item.role }}, {% endif %}
+      {% if item.venue %}{{ item.venue }}, {% endif %}
+      {% if item.semester %}{{ item.semester }}{% endif %}
+    </li>
+  {% endfor %}
+</ul>
   
 Organization of events
 ------
-* Workshop [Refinement in Enumerative Geometry and Physics](https://www.icts.res.in/current-and-upcoming-events), Bangalore (22 Jun–3 Jul, 2026)
-* School [Quantum Geometry](https://houches24.github.io), Les Houches (29 July–23 Aug, 2024)
-* School [Topological recursion and integrability](https://indico.in2p3.fr/event/29404), Trieste (11–16 Sep, 2023)
-* Conference [Moduli spaces: theory and coding](https://indico.in2p3.fr/event/28594), Les Diablerets (27 Feb–3 Mar, 2023)
-* School + workshop [TR Salento 2022](https://sites.google.com/view/tr-salento-2022/home), Otranto (5–16 Sep, 2022)
-* Conference [Recent advances on moduli spaces of curves](https://sites.google.com/view/moduli2022/home), Leysin (18–24 March, 2022)
-* On-line reading group [Donaldson–Thomas invariants](https://www.mathematik.hu-berlin.de/de/forschung/forschungsgebiete/mathematische-physik/borot-mp-homepage/online-reading-group-stability-conditions-and-dt-invariants), MPIM (Spring 2020)
-* Reading group [Integer points in polyhedra](https://sites.google.com/view/integerpointsonpolyhedra/home), MPIM (Fall 2019)
-* Reading group [Geometric recursion](https://sites.google.com/view/grlearningseminar/home), MPIM (Fall 2018)
+<ul>
+  {% assign sorted_events = site.events | sort: 'date' | reverse %}
+  {% for event in sorted_events %}
+    <li>
+      {{ event.type }} 
+      <em><a href="{{ event.link }}">{{ event.title }}</a></em>, 
+      {{ event.venue }} ({{ event.when }})
+    </li>
+  {% endfor %}
+</ul>
 
 <!--
 Research stays

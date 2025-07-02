@@ -145,7 +145,7 @@ var addressPoints = [
       11.025420703369921
   ],
   [
-      "University of Padua, IT",
+      "University of Padua, Padua, IT",
       45.411217126131724,
       11.887718802738151
   ]

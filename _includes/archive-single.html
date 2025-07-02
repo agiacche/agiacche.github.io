@@ -38,7 +38,7 @@
     {% endif %}
 
     {% if post.collection == 'teaching' %}
-      <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+      <p>{{ post.type | capitalize }}, {{ post.venue }}, {{ post.semester }}</p>
 
     {% elsif post.collection == 'publications' and post.category == 'book' %}
       <p>
@@ -136,26 +136,6 @@
         {% else %}
           {{ post.excerpt | markdownify }}
         {% endif %}
-      </p>
-    {% endif %}
-
-    {% assign downloads = "" %}
-    {% if post.paperurl %}
-      {% assign downloads = downloads | append: '<a href="' | append: post.paperurl | append: '">Download Paper</a>' %}
-    {% endif %}
-    {% if post.slidesurl %}
-      {% if downloads != "" %}{% assign downloads = downloads | append: ' | ' %}{% endif %}
-      {% assign downloads = downloads | append: '<a href="' | append: post.slidesurl | append: '">Download Slides</a>' %}
-    {% endif %}
-    {% if post.bibtexurl %}
-      {% if downloads != "" %}{% assign downloads = downloads | append: ' | ' %}{% endif %}
-      {% assign downloads = downloads | append: '<a href="' | append: post.bibtexurl | append: '">Download Bibtex</a>' %}
-    {% endif %}
-
-    {% if post.citation or downloads != "" %}
-      <p>
-        {% if post.citation %}Recommended citation: {{ post.citation }}<br>{% endif %}
-        {{ downloads | raw }}
       </p>
     {% endif %}
 

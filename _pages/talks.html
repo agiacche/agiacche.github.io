@@ -6,12 +6,67 @@ permalink: /talks/
 author_profile: true
 ---
 
+{% include base_path %}
+
 {% if site.talkmap_link == true %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<p>See a <a href="/talkmap.html">map</a> of all the places I've given a talk!</p>
 
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+{% assign categories = "conferences,seminars,misc" | split: "," %}
+
+{% for cat in categories %}
+  {% assign talks = site.talks | where: "category", cat | sort: "date" | reverse %}
+  {% if talks.size > 0 %}
+    <h2>{{ cat | capitalize }}</h2>
+    <ul>
+      {% for talk in talks %}
+        <li>
+          <em>{{ talk.title | markdownify | remove: '<p>' | remove: '</p>' }}</em><br />
+          <small>{{ talk.event }} – {% if talk.venue %}{{ talk.venue }} – {% endif %} {{ talk.date | date: "%B %Y" }}
+            {% if talk.slides or talk.notes or talk.video %}
+              <span style="display: inline-flex; gap: 10px; margin-left: 10px;">
+                {% if talk.slides %}
+                  <span style="display: inline-flex; gap: 10px;">
+                    {% if talk.slides.first %}
+                      {% for s in talk.slides %}
+                        <a href="{{ s }}" target="_blank" rel="noopener noreferrer" aria-label="Slides {{ forloop.index }}" style="color: currentColor; text-decoration: none; position: relative;">
+                          <i class="fa-solid fa-pen-to-square"></i><sup style="font-size: 0.6em; margin-left: 2px;">{{ forloop.index }}</sup>
+                        </a>
+                      {% endfor %}
+                    {% else %}
+                      <a href="{{ talk.slides }}" target="_blank" rel="noopener noreferrer" aria-label="Slides" style="color: currentColor; text-decoration: none;">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </a>
+                    {% endif %}
+                  </span>
+                {% endif %}
+                {% if talk.notes %}
+                  <a href="{{ talk.notes }}" target="_blank" rel="noopener noreferrer" aria-label="Notes" style="color: currentColor; text-decoration: none;">
+                    <i class="fa-regular fa-file-pdf"></i>
+                  </a>
+                {% endif %}
+                {% if talk.video %}
+                  <span style="display: inline-flex; gap: 10px;">
+                    {% if talk.video contains 'http' %}
+                      <a href="{{ talk.video }}" target="_blank" rel="noopener noreferrer" aria-label="Video" style="color: currentColor; text-decoration: none;">
+                        <i class="fa-solid fa-video"></i>
+                      </a>
+                    {% else %}
+                      {% for v in talk.video %}
+                        <a href="{{ v }}" target="_blank" rel="noopener noreferrer" aria-label="Video {{ forloop.index }}" style="color: currentColor; text-decoration: none;">
+                          <i class="fa-solid fa-video"></i><sup>{{ forloop.index }}</sup>
+                        </a>
+                      {% endfor %}
+                    {% endif %}
+                  </span>
+                {% endif %}
+              </span>
+            {% endif %}
+          </small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% endfor %}
