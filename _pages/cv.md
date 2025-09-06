@@ -9,9 +9,21 @@ redirect_from:
 ---
 
 {% include base_path %}
+
+<style>
+/* make the CV TOC sticky */
+.sidebar__right {
+  position: sticky;
+  top: 80px; /* adjust depending on your navbar height */
+  align-self: flex-start;
+  height: fit-content;
+}
+</style>
+
 {% include toc %}
 
 <div style="margin-top: 2em;"></div>
+
 
 The [CV](http://agiacche.github.io/files/giacchetto_cv_en.pdf) can be downloaded here. Below is a brief summary.
 

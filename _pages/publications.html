@@ -7,19 +7,29 @@ author_profile: true
 ---
 
 {% include base_path %}
-<aside class="sidebar__right sticky">
-    <nav class="toc">
-      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-      <ul class="toc__menu">
-        {% if site.publication_category %}
-          {% for category in site.publication_category %}
-            <li><a href="#{{ category[1].title | slugify }}" class="nav__link">{{ category[1].title }}</a></li>
-          {% endfor %}
-        {% endif %}
-        <li><a href="#collaborators" class="nav__link">Collaborators</a></li>
-      </ul>
-    </nav>
-  </aside>
+<aside class="sidebar__right">
+  <nav class="toc">
+    <header>
+      <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+    </header>
+    <ul class="toc__menu">
+      {% if site.publication_category %}
+        {% for category in site.publication_category %}
+          <li><a href="#{{ category[1].title | slugify }}" class="nav__link">{{ category[1].title }}</a></li>
+        {% endfor %}
+      {% endif %}
+      <li><a href="#collaborators" class="nav__link">Collaborators</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<style>
+.sidebar__right {
+  position: sticky;
+  top: 80px; /* adjust depending on your navbar height */
+  align-self: flex-start; /* make sure it doesn’t stretch */
+}
+</style>
 
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
