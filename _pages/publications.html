@@ -23,42 +23,38 @@ author_profile: true
   </nav>
 </aside>
 
-<style>
-.sidebar__right {
-  position: sticky;
-  top: 80px; /* adjust depending on your navbar height */
-  align-self: flex-start; /* make sure it doesn’t stretch */
-}
-</style>
-
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
 <!-- New style rendering if publication categories are defined -->
+{% assign sorted_publications = site.publications | sort: 'date' | reverse %}
+
+<div class="pub-list">
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
+  {% for category in site.publication_category %}
     {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
+    {% for post in sorted_publications %}
       {% if post.category != category[0] %}
         {% continue %}
       {% endif %}
       {% unless title_shown %}
-        <h2 id="{{ category[1].title | slugify }}">{{ category[1].title }}</h2><hr />
+        <h2 id="{{ category[1].title | slugify }}">{{ category[1].title }}</h2>
         {% assign title_shown = true %}
       {% endunless %}
-      {% include archive-single.html %}
+      {% include publication-item.html post=post %}
     {% endfor %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+  {% for post in sorted_publications %}
+    {% include publication-item.html post=post %}
   {% endfor %}
 {% endif %}
+</div>
 
-<h2 id="collaborators">Collaborators</h2><hr />
+<h2 id="collaborators">Collaborators</h2>
 
-<ul>
+<ul class="collaborator-list">
   <li><a href="https://portal.findresearcher.sdu.dk/en/persons/j%C3%B8rgen-ellegaard-andersen" target="_blank">Jørgen Ellegaard Andersen</a></li>
   <li><a href="https://sites.google.com/view/simonbarazer/" target="_blank">Simon Barazer</a></li>
   <li><a href="https://www.mathematik.hu-berlin.de/de/forschung/forschungsgebiete/mathematische-physik/borot-mp-homepage" target="_blank">Gaëtan Borot</a></li>

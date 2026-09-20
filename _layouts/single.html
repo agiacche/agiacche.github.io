@@ -27,38 +27,11 @@ layout: default
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
           {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-          {% if page.coauthors or page.journal or page.year or page.arxiv or page.doi or page.open or page.git %}
-            <p style="line-height: 2;">
-              {% if page.coauthors %}with {{ page.coauthors }}<br>{% endif %}
-              {% if page.series %}<span>In: <i>{{ page.series }}</i><br></span>{% endif %}
-              {% if page.journal %}
-                <i>{{ page.journal }}</i>
-                {% if page.volume %} {{ page.volume }}{% endif %}{% if page.issue %}.{{ page.issue }}{% endif %}
-                {% if page.year %} ({{ page.year }}){% endif %}
-              {% endif %}
-              <span style="display: inline-flex; gap: 10px;">
-                {% if page.arxiv %}
-                  <a href="https://arxiv.org/abs/{{ page.arxiv }}" target="_blank" rel="noopener noreferrer" style="color: currentColor;">
-                    <i class="ai ai-arxiv"></i>
-                  </a>
-                {% endif %}
-                {% if page.doi %}
-                  <a href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener noreferrer" style="color: currentColor;">
-                    <i class="ai ai-doi"></i>
-                  </a>
-                {% endif %}
-                {% if page.open %}
-                  <a href="{{ page.open }}" target="_blank" rel="noopener noreferrer" style="color: currentColor;">
-                    <i class="ai ai-open-access"></i>
-                  </a>
-                {% endif %}
-                {% if page.git %}
-                  <a href="https://github.com/{{ page.git }}" target="_blank" rel="noopener noreferrer" style="color: currentColor;">
-                    <i class="fab fa-github"></i>
-                  </a>
-                {% endif %}
-              </span>
-            </p>
+          {% if page.collection == 'publications' %}
+            <div class="pub-item__header">
+              {% include pub-meta.html post=page %}
+              {% include pub-links.html post=page %}
+            </div>
           {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>

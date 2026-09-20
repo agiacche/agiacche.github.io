@@ -1,6 +1,13 @@
 # Ignore the contents of the _site directory and other cache directories
 _site/
+_site_test/
 .sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/
 
 # Ignore the directory for local files during development
 local/

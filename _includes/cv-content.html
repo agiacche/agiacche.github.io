@@ -1,0 +1,115 @@
+{% comment %}
+  The CV's actual content, shared between the on-site CV page (/cv/) and
+  the print-optimized page used to generate the downloadable PDF
+  (/cv/print/), so both are always built from the same data:
+    - Employment / Education / Honours -> _data/cv.yml
+    - Publications                     -> _publications/ (site.publications)
+    - Teaching                         -> _teaching/ and _teaching_misc/
+    - Organised events                 -> _events/
+
+  Usage: {% include cv-content.html %}
+         {% include cv-content.html print=true %}   (omits the on-site
+         "download PDF" button, since it would be circular on the PDF itself)
+
+  Headings below are written as markdown ATX headers ("## Foo"), not raw
+  <h2> tags: this file is only ever included from *.md pages (cv.md and
+  the print page), and kramdown's TOC ({:toc}, used by _includes/toc)
+  only recognises headings it parses itself — a raw <h2> arriving via a
+  Liquid include is invisible to it. auto_ids (see _config.yml) then
+  generates the same ids ("employment", "organization-of-events", etc.)
+  that the on-page anchors and the sticky TOC rely on.
+
+  Links (thesis PDFs, teaching pages, event pages) are always real <a>
+  tags, print mode included: the print page sets a <base> tag pointing
+  at the production URL, so Chromium resolves every relative href to a
+  full https://... address before it's embedded in the generated PDF as
+  a clickable link — no need to strip them down to plain text.
+{% endcomment %}
+{% assign cv = site.data.cv %}
+
+{% unless include.print %}
+<p class="cv-download"><a href="/files/giacchetto_cv_en.pdf" class="pub-link pub-link--cta"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i><span>Download the CV as a PDF</span></a></p>
+{% endunless %}
+
+## Employment
+<ul class="cv-list">
+  {% for job in cv.employment %}
+    <li class="cv-entry">
+      <span class="cv-entry__dates">{{ job.dates }}</span>
+      <span class="cv-entry__body">
+        <span class="cv-entry__title">{{ job.role }}</span>, {{ job.institution }}
+        {% if job.detail %}<br><span class="cv-entry__detail">{{ job.detail }}</span>{% endif %}
+      </span>
+    </li>
+  {% endfor %}
+</ul>
+
+## Education
+<ul class="cv-list">
+  {% for edu in cv.education %}
+    <li class="cv-entry">
+      <span class="cv-entry__dates">{{ edu.year }}</span>
+      <span class="cv-entry__body">
+        <span class="cv-entry__title">{{ edu.degree }}</span>, {{ edu.institution }}
+        {% if edu.thesis_title %}<br><span class="cv-entry__detail"><em><a href="{{ edu.thesis_url }}">{{ edu.thesis_title }}</a></em></span>{% endif %}
+        {% if edu.supervisor %}<br><span class="cv-entry__detail">Supervisor: {{ edu.supervisor }}</span>{% endif %}
+      </span>
+    </li>
+  {% endfor %}
+</ul>
+
+## Publications and preprints
+<ul class="pub-list pub-list--cv">
+  {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+  {% for pub in sorted_pubs %}
+    {% include publication-item.html post=pub mode="cv" %}
+  {% endfor %}
+</ul>
+
+## Teaching
+<ul class="cv-list cv-list--compact">
+  {% assign combined_teaching = site.teaching | concat: site.teaching_misc %}
+  {% assign sorted_teaching = combined_teaching | sort: 'date' | reverse %}
+  {% for item in sorted_teaching %}
+    <li class="cv-entry cv-entry--compact">
+      <span class="cv-entry__body">
+        {% if item.permalink %}
+          <em><a href="{{ item.permalink }}">{{ item.title }}</a></em>,
+        {% else %}
+          <em>{{ item.title }}</em>,
+        {% endif %}
+        {% if item.role %}{{ item.role }}, {% endif %}
+        {% if item.venue %}{{ item.venue }}, {% endif %}
+        {% if item.semester %}{{ item.semester }}{% endif %}
+      </span>
+    </li>
+  {% endfor %}
+</ul>
+
+## Organization of events
+<ul class="cv-list cv-list--compact">
+  {% assign sorted_events = site.events | sort: 'date' | reverse %}
+  {% for event in sorted_events %}
+    <li class="cv-entry cv-entry--compact">
+      <span class="cv-entry__body">
+        {{ event.type }}
+        {% if event.link %}
+          <em><a href="{{ event.link }}">{{ event.title }}</a></em>,
+        {% else %}
+          <em>{{ event.title }}</em>,
+        {% endif %}
+        {{ event.venue }} ({{ event.when }})
+      </span>
+    </li>
+  {% endfor %}
+</ul>
+
+## Honours
+<ul class="cv-list cv-list--compact">
+  {% for h in cv.honours %}
+    <li class="cv-entry cv-entry--compact">
+      <span class="cv-entry__dates">{{ h.dates }}</span>
+      <span class="cv-entry__body">{{ h.title }}</span>
+    </li>
+  {% endfor %}
+</ul>

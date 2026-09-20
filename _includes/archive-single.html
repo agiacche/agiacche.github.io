@@ -1,5 +1,14 @@
 {% include base_path %}
 
+{% if post.collection == 'publications' and include.type != 'grid' %}
+  {% comment %}
+    Publications have their own canonical rendering (compact metadata,
+    labelled links, collapsible abstract) shared with the publications
+    page and the CV — used here too so tag/sitemap listings match.
+  {% endcomment %}
+  {% include publication-item.html post=post %}
+{% else %}
+
 {% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
 {% else %}
@@ -39,95 +48,12 @@
 
     {% if post.collection == 'teaching' %}
       <p>{{ post.type | capitalize }}, {{ post.venue }}, {{ post.semester }}</p>
-
-    {% elsif post.collection == 'publications' and post.category == 'book' %}
-      <p>
-        {% if post.coauthors %}
-          <span style="display: inline-block; margin-bottom: 4px;">with {{ post.coauthors }}</span><br>
-        {% endif %}
-        {% if post.series %}
-          <span style="display: inline-block; margin-bottom: 4px;">In: <i>{{ post.series }}</i></span><br>
-        {% endif %}
-        <i>{{ post.journal }}</i> {{ post.volume }}{% if post.issue %}.{{ post.issue }}{% endif %} ({{ post.year }})
-        <span style="display: inline-flex; gap: 10px;">
-          {% if post.arxiv %}
-            <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-arxiv"></i>
-            </a>
-          {% endif %}
-          {% if post.doi %}
-            <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer" aria-label="DOI link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-doi"></i>
-            </a>
-          {% endif %}
-          {% if post.open %}
-            <a href="{{ post.open }}" target="_blank" rel="noopener noreferrer" aria-label="Open Access link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-open-access"></i>
-            </a>
-          {% endif %}
-          {% if post.git %}
-            <a href="https://github.com/{{ post.git }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub link" style="color: currentColor; text-decoration: none;">
-              <i class="fab fa-github"></i>
-            </a>
-          {% endif %}
-        </span>
-      </p>
-
-    {% elsif post.collection == 'publications' %}
-      <p>
-        {% if post.coauthors %}
-          <span style="display: inline-block; margin-bottom: 4px;">with {{ post.coauthors }}</span><br>
-        {% endif %}
-        {% if post.note %}{{ post.note }} in {% endif %}<i>{{ post.journal }}</i> {{ post.volume }}{% if post.issue %}.{{ post.issue }}{% endif %} ({{ post.year }})
-        <span style="display: inline-flex; gap: 10px;">
-          {% if post.arxiv %}
-            <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-arxiv"></i>
-            </a>
-          {% endif %}
-          {% if post.doi %}
-            <a href="https://doi.org/{{ post.doi }}" target="_blank" rel="noopener noreferrer" aria-label="DOI link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-doi"></i>
-            </a>
-          {% endif %}
-          {% if post.open %}
-            <a href="{{ post.open }}" target="_blank" rel="noopener noreferrer" aria-label="Link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-open-access"></i>
-            </a>
-          {% endif %}
-          {% if post.git %}
-            <a href="https://github.com/{{ post.git }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub link" style="color: currentColor; text-decoration: none;">
-              <i class="fab fa-github"></i>
-            </a>
-          {% endif %}
-        </span>
-      </p>
-
-    {% elsif post.collection == 'preprint' %}
-      <p>
-        {% if post.coauthors %}
-          <span style="display: inline-block; margin-bottom: 4px;">with {{ post.coauthors }}</span><br>
-        {% endif %}
-        ({{ post.year }})
-        <span style="display: inline-flex; gap: 10px;">
-          {% if post.arxiv %}
-            <a href="https://arxiv.org/abs/{{ post.arxiv }}" target="_blank" rel="noopener noreferrer" aria-label="arXiv link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-arxiv"></i>
-            </a>
-          {% endif %}
-          {% if post.open %}
-            <a href="{{ post.open }}" target="_blank" rel="noopener noreferrer" aria-label="Link" style="color: currentColor; text-decoration: none;">
-              <i class="ai ai-open-access"></i>
-            </a>
-          {% endif %}
-          {% if post.git %}
-            <a href="https://github.com/{{ post.git }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub link" style="color: currentColor; text-decoration: none;">
-              <i class="fab fa-github"></i>
-            </a>
-          {% endif %}
-        </span>
-      </p>
     {% endif %}
+    {% comment %}
+      Note: publications are handled entirely by the branch at the top of
+      this file (delegating to publication-item.html), so no publications
+      branch is needed here.
+    {% endcomment %}
 
     {% if post.excerpt %}
       <p class="archive__item-excerpt" itemprop="description">
@@ -141,3 +67,5 @@
 
   </article>
 </div>
+
+{% endif %}

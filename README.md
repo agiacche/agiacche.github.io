@@ -1,6 +1,8 @@
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
+> Maintaining *this* site (adding a publication, updating the CV, local dev)? See [`MAINTENANCE.md`](MAINTENANCE.md). The rest of this file is the generic upstream template documentation.
+
 ![Academic Pages template example](images/homepage.png "Academic Pages template example")
 
 # Getting Started

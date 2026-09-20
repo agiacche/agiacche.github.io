@@ -1,0 +1,20 @@
+{% comment %}
+  Renders the compact "authors · venue · year" metadata line for a
+  publication. Shared by the publications list, the individual
+  publication page, and the CV, so the phrasing only exists once.
+
+  Usage: {% include pub-meta.html post=post %}
+{% endcomment %}
+{% assign post = include.post %}
+<span class="pub-item__meta">
+  {% if post.coauthors %}<span class="pub-item__authors">{{ post.coauthors }}</span>{% endif %}
+  {% if post.category == "published" or post.category == "book" %}
+    {% if post.series %}<span class="pub-item__series">{{ post.series }}</span>{% endif %}
+    <span class="pub-item__venue">
+      {% if post.note %}{{ post.note }} in {% endif %}<em>{{ post.journal }}</em>{% if post.volume %} {{ post.volume }}{% endif %}{% if post.issue %}.{{ post.issue }}{% endif %}
+    </span>
+  {% else %}
+    <span class="pub-item__venue">Preprint</span>
+  {% endif %}
+  <span class="pub-item__year">{{ post.year }}</span>
+</span>

@@ -1,0 +1,37 @@
+{% comment %}
+  Canonical rendering of one publication, used everywhere a publication
+  is listed: the publications page, and (in "cv" mode) the CV page.
+
+  Usage:
+    {% include publication-item.html post=post %}                (default "list" mode)
+    {% include publication-item.html post=post mode="cv" %}       (compact single line)
+
+  For the standalone publication page itself, see the "header" block
+  reused directly in _layouts/single.html via pub-meta.html / pub-links.html.
+{% endcomment %}
+{% include base_path %}
+{% assign post = include.post %}
+{% assign mode = include.mode | default: "list" %}
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+
+{% if mode == "cv" %}
+<li class="pub-item pub-item--cv">
+  <span class="pub-item__title"><a href="{{ base_path }}{{ post.url }}">{{ title }}</a></span>
+  {% include pub-meta.html post=post %}
+  {% include pub-links.html post=post %}
+</li>
+{% else %}
+<article class="pub-item pub-item--list" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <h3 class="pub-item__title" itemprop="headline">
+    <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+  </h3>
+  {% include pub-meta.html post=post %}
+  {% include pub-links.html post=post %}
+  {% if post.excerpt %}
+    <details class="pub-item__abstract">
+      <summary>Abstract</summary>
+      <div class="pub-item__abstract-body" itemprop="description">{{ post.excerpt | markdownify }}</div>
+    </details>
+  {% endif %}
+</article>
+{% endif %}

@@ -1,0 +1,24 @@
+# Local development/testing override.
+# Not used in production (GitHub Pages builds from _config.yml alone):
+# run `bundle exec jekyll serve --config _config.yml,_config_dev.yml`.
+#
+# Two things this fixes for local preview:
+# 1) `url` is cleared so {{ base_path }} (site.url + site.baseurl, used
+#    for the main stylesheet/script tags and most internal links) is
+#    root-relative instead of an absolute https://agiacche.github.io/...
+#    URL — otherwise a local server loads the *live* production CSS/JS
+#    instead of the copy you're editing, which is confusing when a
+#    change doesn't seem to show up.
+# 2) The plugin list is trimmed to what's available via apt in this
+#    sandbox (no network access to rubygems.org here), so the site can
+#    still build and be previewed locally. Real deploys use the full
+#    plugin list below via bundler/GitHub Pages.
+url: ""
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from

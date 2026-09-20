@@ -1,0 +1,302 @@
+/* ==========================================================================
+   ACADEMIC CONTENT
+   Shared styles for publications, the CV, and other bibliography-style
+   lists. Kept in one place so these components stay visually consistent
+   wherever they appear (publications page, CV, tag/sitemap listings).
+   ========================================================================== */
+
+/* Section headings on "archive" layout pages (CV, publications, talks,
+   teaching) don't get the .page__content > h2 border-bottom treatment,
+   so give them one directly instead of relying on manual <hr> tags. */
+.archive h2 {
+  margin-top: 2em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+/*
+   Publication list items
+   ========================================================================== */
+
+.pub-list {
+  margin-top: 0.5em;
+}
+
+.pub-item--list {
+  padding: 0.9em 0;
+  border-bottom: 1px solid var(--global-border-color);
+
+  &:first-of-type {
+    padding-top: 0.25em;
+  }
+}
+
+.pub-item__title {
+  margin: 0 0 0.2em;
+  font-family: $sans-serif-narrow;
+  font-size: $type-size-4;
+  font-weight: 700;
+  line-height: 1.3;
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+}
+
+.pub-item__meta {
+  display: block;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  line-height: 1.6;
+
+  > span:not(:last-child)::after {
+    content: " · ";
+  }
+}
+
+.pub-item__authors {
+  color: var(--global-text-color);
+}
+
+.pub-item--list .pub-links {
+  display: block;
+  margin-top: 0.45em;
+}
+
+/* Meta + links reused as-is on the individual publication page header */
+.pub-item__header {
+  margin-bottom: 1.5em;
+
+  .pub-item__meta {
+    font-size: $type-size-5;
+  }
+}
+
+/*
+   Action links (arXiv, DOI, PDF, open access, code, slides)
+   ========================================================================== */
+
+.pub-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35em 1em;
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  text-decoration: none;
+  white-space: nowrap;
+
+  i {
+    font-size: 0.95em;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-link-color);
+    text-decoration: underline;
+  }
+}
+
+.pub-link--cta {
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: $border-radius;
+  color: var(--global-text-color);
+  font-size: $type-size-5;
+  font-weight: 600;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--global-link-color);
+    color: var(--global-link-color);
+    text-decoration: none;
+  }
+}
+
+/*
+   Collapsible abstract ("Details")
+   ========================================================================== */
+
+.pub-item__abstract {
+  margin-top: 0.55em;
+  font-size: $type-size-6;
+}
+
+.pub-item__abstract summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  cursor: pointer;
+  color: var(--global-text-color-light);
+  font-weight: 600;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    content: "▸";
+    display: inline-block;
+    font-size: 0.85em;
+    transition: transform 0.15s ease-in-out;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-link-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+.pub-item__abstract[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.pub-item__abstract-body {
+  margin-top: 0.5em;
+  padding-left: 1em;
+  border-left: 2px solid var(--global-border-color);
+  color: var(--global-text-color);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+   CV: publication list (compact mode)
+   ========================================================================== */
+
+.pub-list--cv {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub-item--cv {
+  margin: 0 0 0.75em;
+  font-size: $type-size-6;
+  line-height: 1.65;
+
+  .pub-item__title {
+    display: inline;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    font-style: italic;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .pub-item__meta {
+    display: inline;
+
+    > span:not(:last-child)::after {
+      content: " · ";
+    }
+  }
+
+  .pub-links {
+    margin-left: 0.4em;
+  }
+}
+
+/*
+   CV: employment / education / honours / teaching / events entries
+   ========================================================================== */
+
+.cv-download {
+  margin: 0 0 1.5em;
+}
+
+.cv-list {
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em 1.25em;
+  margin-bottom: 1em;
+
+  @include breakpoint($medium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.cv-entry__dates {
+  flex: 0 0 auto;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+
+  @include breakpoint($medium) {
+    flex-basis: 9em;
+  }
+}
+
+.cv-entry__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.cv-entry__title {
+  font-weight: 700;
+}
+
+.cv-entry__detail {
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+}
+
+.cv-list--compact {
+  .cv-entry {
+    margin-bottom: 0.5em;
+    font-size: $type-size-6;
+  }
+}
+
+/*
+   Collaborators
+   ========================================================================== */
+
+.collaborator-list {
+  margin: 0;
+  padding-left: 1.2em;
+  columns: 2;
+  column-gap: 2em;
+
+  li {
+    break-inside: avoid;
+    margin-bottom: 0.4em;
+  }
+
+  @include breakpoint($medium-wide) {
+    columns: 3;
+  }
+
+  @include breakpoint(max-width $small) {
+    columns: 1;
+  }
+}

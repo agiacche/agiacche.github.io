@@ -1,0 +1,83 @@
+# Canonical CV data.
+#
+# This is the single source of truth for the "static" parts of the CV
+# (employment history, education, honours/funding) that don't already
+# live in their own Jekyll collection.
+#
+# Everything else on the CV page (/cv/) is generated straight from its
+# own collection and does NOT need to be duplicated here:
+#   - Publications  -> _publications/  (site.publications)
+#   - Teaching       -> _teaching/ and _teaching_misc/
+#   - Organised events -> _events/
+#   - Current position / contact / links -> _config.yml (site.author)
+#
+# To update the CV: edit this file (for employment/education/honours)
+# or add a new file to the relevant collection (for publications,
+# teaching, talks, events). Both the /cv/ page and the downloadable
+# CV PDF are generated from this same data, so there is nothing else
+# to keep in sync. See CONTRIBUTING.md for details.
+
+employment:
+  - dates: "Oct 2023–present"
+    role: "ETH Fellow & Hermann-Weyl-Instructor"
+    institution: "ETH Zürich"
+    detail: "Mentor: Rahul Pandharipande"
+  - dates: "Oct 2021–Oct 2023"
+    role: "Postdoctoral Fellow"
+    institution: "IPhT"
+    detail: "Mentor: Bertrand Eynard"
+
+education:
+  - degree: "PhD in Mathematics"
+    institution: "MPIM"
+    year: "2021"
+    thesis_title: "Geometric and topological recursion and invariants of the moduli space of curves"
+    thesis_url: "/files/ThesisPhD.pdf"
+    supervisor: "Gaëtan Borot"
+  - degree: "MSc in Mathematics"
+    institution: "University of Trieste & SISSA"
+    year: "2017"
+    thesis_title: "The J-equation on Kähler manifolds and blowups"
+    thesis_url: "/files/ThesisMSc.pdf"
+    supervisor: "Jacopo Stoppa"
+  - degree: "BSc in Mathematics"
+    institution: "University of Trieste"
+    year: "2015"
+    thesis_title: "Skein relations and polynomial invariants of knots and links"
+    thesis_url: "/files/ThesisBSc.pdf"
+    supervisor: "Bruno Zimmermann"
+
+honours:
+  - dates: "Oct 2023–Sep 2025"
+    title: "ETH Fellowship"
+  # - dates: "2021"
+  #   title: "Oberwolfach Leibniz Graduate Students"
+  - dates: "2018"
+    title: "Marco Reni prize"
+  # - dates: "2017"
+  #   title: "Friulovest Bank award"
+  - dates: "Sep 2015–Sep 2017"
+    title: "SISSA MSc Fellowship"
+  - dates: "2012/13"
+    title: "Best freshman, University of Trieste"
+  # - dates: "2015"
+  #   title: "Friulovest Bank award"
+  - dates: "Sep 2012–Sep 2015"
+    title: "Luciano Fonda BSc Fellowship"
+
+# Not currently shown on the CV page (kept here for reference, as it was
+# previously commented out in the page source). Uncomment / move into a
+# rendered section if you want to bring this back.
+# research_stays:
+#   - year: "2024"
+#     places: "University of Edinburgh, University of Tokyo, University of Science and Technology of China"
+#   - year: "2023"
+#     places: "University of Trieste"
+#   - year: "2022"
+#     places: "University of Geneva, SISSA, Leiden University, Humboldt University, University of Trieste"
+#   - year: "2021"
+#     places: "Humboldt University"
+#   - year: "2020"
+#     places: "University of Melbourne"
+#   - year: "2019"
+#     places: "Centre for Quantum Mathematics"

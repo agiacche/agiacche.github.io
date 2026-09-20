@@ -1,0 +1,54 @@
+---
+---
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.author.name }} - CV</title>
+    <meta name="robots" content="noindex">
+
+    {% comment %}
+      Everything on this page is meant to end up in a PDF (see
+      scripts/generate_cv_pdf.py), so every relative link needs to resolve
+      to a real, absolute production URL rather than to whatever host
+      happens to be serving this HTML at generation time. Setting <base>
+      makes the browser do that resolution for us - Chromium then embeds
+      the resolved absolute URL as the PDF's clickable link target.
+    {% endcomment %}
+    <base href="{{ site.url }}{{ site.baseurl }}/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css">
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/cv-print.css">
+
+    {% comment %}
+      MathJax, for publication/thesis titles that contain inline math
+      (e.g. "\(\overline{\mathcal{M}}_{g,n}\)"). Same CDN source as the
+      rest of the site (_includes/head/custom.html); duplicated here
+      rather than shared because this bare print layout intentionally
+      skips the rest of that file (favicons, Mermaid, Plotly - none of
+      which the CV needs).
+    {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <body class="cv-print">
+    <main class="cv-print__page archive">
+      <header class="cv-print__header">
+        <h1>{{ site.author.name }}</h1>
+        <p class="cv-print__subtitle">{{ site.author.bio }} &middot; {{ site.author.employer }}</p>
+        <p class="cv-print__contact">
+          {{ site.author.location }}
+          {% if site.author.email %} &middot; {{ site.author.email }}{% endif %}
+          {% if site.url %} &middot; {{ site.url | replace: 'https://', '' | replace: 'http://', '' }}{% endif %}
+        </p>
+      </header>
+
+      {{ content }}
+    </main>
+  </body>
+</html>

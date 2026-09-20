@@ -1,0 +1,91 @@
+---
+---
+
+@charset "utf-8";
+
+/*
+  Print-optimised CV page (/cv/print/), used both for on-screen preview and
+  as the source for the generated CV PDF (see scripts/generate_cv_pdf.py).
+
+  Loaded *after* main.css on that page, so it only needs to add A4 page
+  setup, a single-column reading width, and print-specific tweaks - all the
+  actual typography/colour/spacing comes from the shared design system
+  (_sass/layout/_academic.scss and friends) via main.css, so the print CV
+  and the on-site CV page stay visually consistent automatically.
+*/
+
+@import "vendor/breakpoint/breakpoint";
+@import "themes";
+@import "theme/default";
+@import "include/mixins";
+
+@page {
+  size: A4;
+  margin: 18mm 16mm;
+}
+
+body.cv-print {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--global-text-color);
+}
+
+.cv-print__page {
+  max-width: 720px;
+  margin: 2.5em auto;
+  padding: 0 1.5em;
+
+  @include breakpoint(max-width $small) {
+    padding: 0 1em;
+  }
+}
+
+.cv-print__header {
+  margin-bottom: 1.5em;
+
+  h1 {
+    margin: 0 0 0.15em;
+    font-size: $type-size-2;
+  }
+}
+
+.cv-print__subtitle {
+  margin: 0 0 0.2em;
+  color: var(--global-text-color-light);
+}
+
+.cv-print__contact {
+  margin: 0;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+}
+
+/* The on-site "Download the CV as a PDF" button has no place on the PDF
+   itself; cv-content.html already omits it when print=true, this is just
+   a defensive backstop. */
+.cv-print .cv-download {
+  display: none;
+}
+
+/* Section headings: avoid a heading being stranded alone at the bottom of
+   a page, and keep each CV entry / publication together across a page
+   break wherever that's reasonably possible. */
+@media print {
+  .cv-print__page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .archive h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .cv-entry,
+  .pub-item--cv {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

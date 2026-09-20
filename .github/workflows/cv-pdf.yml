@@ -1,0 +1,72 @@
+name: Regenerate CV PDF
+
+# Keeps files/giacchetto_cv_en.pdf (linked from /cv/ and used as the site's
+# stable "download CV" URL) in sync with the same data the on-site CV page
+# is built from, whenever that data changes. See _includes/cv-content.html
+# and scripts/generate_cv_pdf.py for how the PDF is produced - there is
+# nothing else to keep in sync by hand.
+#
+# Deliberately NOT triggered on changes to files/giacchetto_cv_en.pdf
+# itself, since this workflow is what writes that file - including it here
+# would make the workflow trigger itself on every run.
+on:
+  push:
+    branches: [master]
+    paths:
+      - "_data/cv.yml"
+      - "_publications/**"
+      - "_teaching/**"
+      - "_teaching_misc/**"
+      - "_events/**"
+      - "_includes/cv-content.html"
+      - "_includes/pub-links.html"
+      - "_includes/pub-meta.html"
+      - "_includes/publication-item.html"
+      - "_layouts/cv-print.html"
+      - "_pages/cv-print.md"
+      - "assets/css/cv-print.scss"
+      - "_config.yml"
+      - "scripts/generate_cv_pdf.py"
+      - ".github/workflows/cv-pdf.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Generate CV PDF
+        run: python3 scripts/generate_cv_pdf.py
+
+      - name: Commit updated PDF, if it changed
+        run: |
+          if git diff --quiet -- files/giacchetto_cv_en.pdf; then
+            echo "CV PDF unchanged, nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add files/giacchetto_cv_en.pdf
+          git commit -m "Regenerate CV PDF [skip ci]"
+          git push
