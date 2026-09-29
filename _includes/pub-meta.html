@@ -3,17 +3,33 @@
   publication. Shared by the publications list, the individual
   publication page, and the CV, so the phrasing only exists once.
 
+  In "cv" mode specifically, the coauthors piece breaks onto its own line
+  rather than being joined with " · " like everywhere else - the CV's
+  compact, bulleted format reads as "Title, with coauthors" on one line
+  and "Venue · Year · links" on the next (see the .pub-item--cv rules
+  in _sass/layout/_academic.scss).
+
   Usage: {% include pub-meta.html post=post %}
 {% endcomment %}
 {% assign post = include.post %}
+{% assign mode = include.mode | default: "list" %}
 <span class="pub-item__meta">
-  {% if post.coauthors %}<span class="pub-item__authors">{{ post.coauthors }}</span>{% endif %}
+  {% if post.coauthors %}<span class="pub-item__authors">with {{ post.coauthors }}</span>{% if mode == "cv" %}<br>{% else %} · {% endif %}{% endif %}
   {% if post.category == "published" or post.category == "book" %}
     {% if post.series %}<span class="pub-item__series">{{ post.series }}</span>{% endif %}
     <span class="pub-item__venue">
       {% if post.note %}{{ post.note }} in {% endif %}<em>{{ post.journal }}</em>{% if post.volume %} {{ post.volume }}{% endif %}{% if post.issue %}.{{ post.issue }}{% endif %}
     </span>
-  {% else %}
+  {% elsif mode != "list" %}
+    {% comment %}
+      "list" is the publications page: entries there are already grouped
+      under a "Preprints" heading (see site.publication_category in
+      _config.yml), so repeating "Preprint" on every single item is
+      redundant. Everywhere else this include is used - the CV's flat
+      chronological run (mode="cv"), and a standalone publication page
+      (mode="single", see _layouts/single.html) - there's no such heading,
+      so the label is kept to distinguish preprints from published work.
+    {% endcomment %}
     <span class="pub-item__venue">Preprint</span>
   {% endif %}
   <span class="pub-item__year">{{ post.year }}</span>

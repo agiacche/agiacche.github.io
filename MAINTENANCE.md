@@ -82,9 +82,22 @@ the PDF is generated from).
 
 ## Local development
 
-This repo's `Gemfile` (via the `github-pages` gem) is what CI and a normal
-local setup use - see `README.md` for the standard `bundle install` /
-`bundle exec jekyll serve` instructions.
+`README.md` has the standard `bundle install` / `bundle exec jekyll serve`
+instructions - two things worth knowing on top of that:
+
+- **Use Ruby 3.2**, matching the `Dockerfile` and `.github/workflows/`
+  (e.g. via `rbenv install 3.2.x && rbenv local 3.2.x` in this directory).
+  A newer Ruby (e.g. whatever plain `brew install ruby` gives you) can't
+  satisfy this repo's `Gemfile.lock` platform entry, which forces a full
+  dependency re-resolution that wanders into ancient, no-longer-buildable
+  gem versions instead of the ones actually pinned.
+- The `Gemfile`'s `github-pages` line is commented out, with the reasoning
+  in a comment right above it - short version: that gem pins the whole
+  dependency tree to GitHub's exact (old) production versions, some of
+  which have native C extensions that don't build on Apple Silicon. This
+  only affects local `bundle install`; the live site still deploys via
+  GitHub Pages' own build servers, which never read this repo's
+  `Gemfile.lock` in the first place.
 
 If you don't have network access to rubygems.org (e.g. in a restricted
 sandbox) but do have Jekyll available some other way (e.g. via `apt`), a

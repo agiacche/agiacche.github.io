@@ -16,7 +16,7 @@ Course Details
 
 **Office hours.** By appointment (office HG J 16.2).
 
-**Prerequisites.** Theory of functions of one complex variable, basics of topology. Familiarity with the theory of smooth manifolds and algebraic topology would be useful, but not necessary. 
+**Prerequisites.** Theory of functions of one complex variable, basics of topology. Familiarity with the theory of smooth manifolds and algebraic topology would be useful, but not necessary.
 
 References
 ------

@@ -28,8 +28,8 @@ author_profile: true
             <span class="cv-entry__detail">
               {{ talk.event }} – {% if talk.venue %}{{ talk.venue }} – {% endif %}{{ talk.date | date: "%B %Y" }}
             </span>
-            {% if talk.slides or talk.notes or talk.video %}
-              <span class="pub-links">
+            {%- if talk.slides or talk.notes or talk.video -%}
+              <span class="pub-item__actions pub-item__actions--sep">
                 {% if talk.slides %}
                   {% if talk.slides.first %}
                     {% for s in talk.slides %}

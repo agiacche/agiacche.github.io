@@ -1,13 +1,16 @@
 {% comment %}
-  Renders the row of action links (arXiv, DOI, PDF, open access, code) for
-  a publication. Single canonical place for this logic — used by the
-  publications list, the individual publication page, and the CV.
+  Renders the row of action links (arXiv, DOI, PDF, open access, code,
+  notebook, slides) for a publication. Single canonical place for this
+  logic — used by the publications list, the individual publication page,
+  and the CV. Rendered as `display: contents` (see _sass/layout/_academic.scss)
+  so these <a> tags join the surrounding .pub-item__actions flex row
+  directly, alongside the Abstract toggle.
 
   Usage: {% include pub-links.html post=post %}
 {% endcomment %}
 {% assign post = include.post %}
 {% assign has_links = false %}
-{% if post.arxiv or post.doi or post.pdf or post.open or post.git or post.slides %}{% assign has_links = true %}{% endif %}
+{% if post.arxiv or post.doi or post.pdf or post.open or post.git or post.notebook or post.slides %}{% assign has_links = true %}{% endif %}
 {% if has_links %}
 <span class="pub-links">
   {% if post.arxiv %}
@@ -33,6 +36,11 @@
   {% if post.git %}
     <a class="pub-link" href="https://github.com/{{ post.git }}" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+    </a>
+  {% endif %}
+  {% if post.notebook %}
+    <a class="pub-link" href="{{ post.notebook }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-laptop-code" aria-hidden="true"></i><span>Notebook</span>
     </a>
   {% endif %}
   {% if post.slides %}

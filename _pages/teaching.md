@@ -22,10 +22,9 @@ author_profile: true
       <span class="cv-entry__dates">{{ item.semester }}</span>
       <span class="cv-entry__body">
         <span class="cv-entry__title">{{ item.title }}</span>
-        {% if item.description %} &ndash; {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}
-        , {{ item.venue }}
-        {% if item.resources %}
-          <span class="pub-links">
+        {% if item.description %} &ndash; {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}, {{ item.venue }}
+        {%- if item.resources -%}
+          <span class="pub-item__actions pub-item__actions--sep">
             {% for res in item.resources %}
               <a class="pub-link" href="{{ res.url }}" target="_blank" rel="noopener noreferrer">
                 <i class="fa-regular fa-file-pdf" aria-hidden="true"></i><span>{{ res.label }}</span>

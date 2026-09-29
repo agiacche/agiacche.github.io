@@ -18,3 +18,11 @@ Gemfile.lock
 # Ingore files created by npm
 node_modules
 package-lock.json
+
+# macOS Finder metadata
+.DS_Store
+
+# Scratch output some AI coding tools drop at the repo root - never meant
+# to be committed (e.g. a one-off generated PDF used to sanity-check a
+# change before it's copied to files/)
+Claude outputs/

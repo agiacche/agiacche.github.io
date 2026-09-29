@@ -109,7 +109,9 @@
   {% for h in cv.honours %}
     <li class="cv-entry cv-entry--compact">
       <span class="cv-entry__dates">{{ h.dates }}</span>
-      <span class="cv-entry__body">{{ h.title }}</span>
+      <span class="cv-entry__body">
+        {% if h.link %}<a href="{{ h.link }}">{{ h.title }}</a>{% else %}{{ h.title }}{% endif %}
+      </span>
     </li>
   {% endfor %}
 </ul>

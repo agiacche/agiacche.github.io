@@ -148,5 +148,45 @@ var addressPoints = [
       "University of Padua, Padua, IT",
       45.411217126131724,
       11.887718802738151
+  ],
+  [
+      "Peking University, Beijing, CN",
+      39.98708151676374,
+      116.3058739
+  ],
+  [
+      "University of Geneva, Geneva, CH",
+      46.198859418258586,
+      6.14332368544637
+  ],
+  [
+      "Université Bourgogne Europe, Dijon, FR",
+      47.31212166607179,
+      5.071335278605948
+  ],
+  [
+      "MATRIX Institute, Creswick, AU",
+      -37.42234714256638,
+      143.89957888535835
+  ],
+  [
+      "UPC, Barcelona, ES",
+      41.383631318543706,
+      2.1158030391940312
+  ],
+  [
+      "UIUC, Urbana, US",
+      40.10775700470866,
+      -88.22819480318773
+  ],
+  [
+      "KMI, Nagoya, JP",
+      35.15540403385603,
+      136.96785529645422
+  ],
+  [
+      "ICTS, Bengaluru, IN",
+      13.146822187680765,
+      77.51435253232479
   ]
 ];

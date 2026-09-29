@@ -2,15 +2,32 @@
    ACADEMIC CONTENT
    Shared styles for publications, the CV, and other bibliography-style
    lists. Kept in one place so these components stay visually consistent
-   wherever they appear (publications page, CV, tag/sitemap listings).
+   wherever they appear (publications page, CV, tag/sitemap listings,
+   talks, teaching).
    ========================================================================== */
+
+/*
+   Typographic scale
+   ========================================================================== */
+/* The theme's own $type-size-* scale (see _sass/_themes.scss) jumps
+   straight from $type-size-5 (1em/16px, body text) to $type-size-6
+   (0.75em/12px) with nothing in between. That's fine for theme chrome
+   (footer, breadcrumbs) but too big a drop for content that people
+   actually read at length - publication metadata, CV details, abstracts.
+   These three tokens fill that gap with a gentler, more legible step and
+   give every "secondary" academic-content element a single shared size
+   to pull from, instead of picking $type-size-4/5/6 ad hoc per element. */
+$academic-title-size  : 1.125em;  // ~18px - prominent but below h2 (2em, section headings)
+$academic-meta-size   : 0.875em;  // ~14px - authors/venue/year, CV detail lines, abstract text
+$academic-label-size  : 0.8125em; // ~13px - action links, dates, tags, compact list rows
 
 /* Section headings on "archive" layout pages (CV, publications, talks,
    teaching) don't get the .page__content > h2 border-bottom treatment,
    so give them one directly instead of relying on manual <hr> tags. */
 .archive h2 {
-  margin-top: 2em;
+  margin-top: 2.2em;
   padding-bottom: 0.4em;
+  font-size: $type-size-4;
   border-bottom: 1px solid var(--global-border-color);
 }
 
@@ -23,20 +40,19 @@
 }
 
 .pub-item--list {
-  padding: 0.9em 0;
-  border-bottom: 1px solid var(--global-border-color);
+  margin-bottom: 1.35em;
 
-  &:first-of-type {
-    padding-top: 0.25em;
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
 
 .pub-item__title {
-  margin: 0 0 0.2em;
+  margin: 0 0 0.15em;
   font-family: $sans-serif-narrow;
-  font-size: $type-size-4;
+  font-size: $academic-title-size;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
 
   a {
     text-decoration: none;
@@ -50,12 +66,22 @@
 
 .pub-item__meta {
   display: block;
+  margin-bottom: 0.4em;
   color: var(--global-text-color-light);
-  font-size: $type-size-6;
-  line-height: 1.6;
+  font-size: $academic-meta-size;
+  line-height: 1.5;
 
-  > span:not(:last-child)::after {
-    content: " · ";
+  // .pub-item__authors is excluded: it gets its own explicit separator
+  // right in the template (either " · " or, in cv mode, a line break -
+  // see pub-meta.html) rather than this generic rule's dot, so it isn't
+  // double-separated from whatever follows it.
+  > span:not(.pub-item__authors):not(:last-child)::after {
+    content: " · ";
+    // Explicit, rather than inherited from whichever span this dot is
+    // attached to - otherwise a dot right after a brighter-colored span
+    // would pick up that color instead of matching the grey dot(s)
+    // around it, most visible in dark mode.
+    color: var(--global-text-color-light);
   }
 }
 
@@ -63,82 +89,148 @@
   color: var(--global-text-color);
 }
 
-.pub-item--list .pub-links {
-  display: block;
-  margin-top: 0.45em;
-}
-
 /* Meta + links reused as-is on the individual publication page header */
 .pub-item__header {
   margin-bottom: 1.5em;
-
-  .pub-item__meta {
-    font-size: $type-size-5;
-  }
 }
 
 /*
-   Action links (arXiv, DOI, PDF, open access, code, slides)
+   Action row: arXiv / DOI / PDF / open access / code / slides / notebook,
+   plus the Abstract disclosure toggle as its last item (see below) - all
+   one row of small, evenly-weighted controls under the meta line.
    ========================================================================== */
 
-.pub-links {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.35em 1em;
+// Optional leading separator, for when this action row is appended right
+// after plain text on the same line (e.g. a talk's "venue - date" detail
+// line, or a teaching resource's title/venue) rather than starting a line
+// of its own - the same middot used to join the pieces of
+// .pub-item__meta. Not applied by default: when several of these rows (or
+// several icon+label pairs) already sit side by side, the row's own
+// `gap` is enough and an extra dot between them would be noise.
+.pub-item__actions--sep::before {
+  content: "·";
+  // This is the row's first flex item, so .pub-item__actions' own `gap`
+  // (1.1em, below) already adds space after it - on top of which the
+  // template no longer leaves any incidental whitespace before it (see
+  // the `{%- ... -%}` trims around this span in talks.html / teaching.md
+  // / publication-item.html), so both sides need to be set explicitly
+  // here. Give both the same, ordinary word-space-sized gap, cancelling
+  // out the extra column-gap after so it doesn't stack on top of it.
+  margin-left: 0.5em;
+  margin-right: calc(0.5em - 1.1em);
+  color: var(--global-text-color-light);
 }
 
-.pub-link {
+.pub-item__actions {
   display: inline-flex;
-  align-items: center;
+  flex-wrap: wrap;
+  // `baseline`, not `center`, for two reasons: it lines the pills/Abstract
+  // toggle up with each other by their own text baseline (rather than by
+  // box-center) if the row wraps to more than one line, and - just as
+  // important - it's what makes this flex container expose a real text
+  // baseline to the surrounding line for `vertical-align: baseline` below
+  // to key off in the first place. With `center` here, none of this row's
+  // children "participate in baseline alignment", so the browser instead
+  // synthesizes a baseline from the first child's bottom margin edge -
+  // right around where the hover underline/border sits, not the actual
+  // text - which is what threw the whole row's vertical alignment off.
+  align-items: baseline;
+  gap: 0.5em 1.1em;
+  // So this row lines up with the text baseline of whatever precedes it
+  // on the same line - e.g. the talk/CV detail line it's appended to -
+  // instead of hanging from the top of that line, which is what made the
+  // icon+label pills below read as floating above the rest of the line.
+  vertical-align: baseline;
+}
+
+.pub-links {
+  display: contents;
+}
+
+.pub-link,
+.pub-item__abstract summary {
+  display: inline-flex;
+  // `baseline`, not `center`: the icon glyph and the label text are both
+  // ordinary text runs with real font baselines, so aligning them by
+  // baseline is what actually lines up "arXiv"/"Slides" with its icon.
+  // `center` was aligning them by box-center instead, which (icon fonts
+  // typically being drawn taller than lowercase text) made the icon hang
+  // low, past the label's own baseline and down toward the underline.
+  align-items: baseline;
   gap: 0.35em;
+  padding-bottom: 0.1em;
   color: var(--global-text-color-light);
-  font-size: $type-size-6;
-  text-decoration: none;
+  font-size: $academic-label-size;
+  line-height: 1.4;
   white-space: nowrap;
 
   i {
     font-size: 0.95em;
   }
+}
+
+/* Icon + label need to read as ONE link. `text-decoration: underline` on an
+   inline-flex box draws a separate line under each child (the icon glyph,
+   then the label), leaving a visible gap over the flex `gap` - looking like
+   two links. A border on the box itself doesn't have that problem: it spans
+   the whole element in one continuous line regardless of what's inside. */
+// Qualified with the .pub-item__actions ancestor (two selector components
+// instead of one) so this reliably beats .page__content a / .archive a
+// (also two components: one class + the `a` element) - both in the
+// default state and, critically, on :hover/:focus-visible, where those
+// blanket rules turn text-decoration back on. Without the extra
+// specificity here the result is a double underline: this component's
+// own border-bottom affordance (see the "Icon + label" comment above)
+// stacked with the blanket rule's native text-decoration underline.
+.pub-item__actions .pub-link {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
 
   &:hover,
   &:focus-visible {
+    text-decoration: none;
     color: var(--global-link-color);
-    text-decoration: underline;
+    border-bottom-color: currentColor;
   }
 }
 
 .pub-link--cta {
   margin-top: 0.5em;
   padding: 0.5em 1em;
-  border: 1px solid var(--global-dark-border-color);
+  border: 1px solid var(--global-link-color);
   border-radius: $border-radius;
-  color: var(--global-text-color);
-  font-size: $type-size-5;
+  color: var(--global-link-color);
+  font-size: 1em;
   font-weight: 600;
-
-  &:hover,
-  &:focus-visible {
-    border-color: var(--global-link-color);
-    color: var(--global-link-color);
-    text-decoration: none;
-  }
+  // No :hover/:focus-visible block: this is a plain .pub-link, so it
+  // already picks up the shared, touch-adaptive underline-on-hover
+  // behaviour from .archive a / .page__content a - nothing extra needed.
 }
 
 /*
    Collapsible abstract ("Details")
    ========================================================================== */
+/* Structurally, <details class="pub-item__abstract"> sits as the last
+   child of .pub-item__actions, alongside the plain .pub-link anchors, so
+   the "Abstract" toggle appears on the same row as arXiv/DOI/PDF/etc:
+     .pub-item__actions
+       .pub-links (display: contents - its <a> children join the row directly)
+       details.pub-item__abstract (display: contents - only <summary> joins the row)
+         summary                          <- row item, toggles the details
+         .pub-item__abstract-body         <- flex-basis: 100% forces this
+                                              onto its own full-width line
+                                              below the row when [open],
+                                              rather than sitting inline.
+   This is why Abstract is placed last in the row in every template that
+   uses it: anything after it in source order would get pushed below the
+   expanded body too. */
 
 .pub-item__abstract {
-  margin-top: 0.55em;
-  font-size: $type-size-6;
+  display: contents;
 }
 
 .pub-item__abstract summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
   cursor: pointer;
-  color: var(--global-text-color-light);
   font-weight: 600;
   list-style: none;
 
@@ -170,10 +262,13 @@
 }
 
 .pub-item__abstract-body {
-  margin-top: 0.5em;
+  flex-basis: 100%;
+  margin-top: 0.35em;
   padding-left: 1em;
   border-left: 2px solid var(--global-border-color);
   color: var(--global-text-color);
+  font-size: $academic-meta-size;
+  line-height: 1.6;
 
   p:last-child {
     margin-bottom: 0;
@@ -186,14 +281,14 @@
 
 .pub-list--cv {
   margin: 0;
-  padding: 0;
-  list-style: none;
+  padding-left: 1.2em;
+  list-style: disc;
 }
 
 .pub-item--cv {
   margin: 0 0 0.75em;
-  font-size: $type-size-6;
-  line-height: 1.65;
+  font-size: $academic-meta-size;
+  line-height: 1.6;
 
   .pub-item__title {
     display: inline;
@@ -210,13 +305,15 @@
 
   .pub-item__meta {
     display: inline;
+    margin-bottom: 0;
 
-    > span:not(:last-child)::after {
-      content: " · ";
+    > span:not(.pub-item__authors):not(:last-child)::after {
+      content: " · ";
+      color: var(--global-text-color-light);
     }
   }
 
-  .pub-links {
+  .pub-item__actions {
     margin-left: 0.4em;
   }
 }
@@ -249,7 +346,7 @@
 .cv-entry__dates {
   flex: 0 0 auto;
   color: var(--global-text-color-light);
-  font-size: $type-size-6;
+  font-size: $academic-label-size;
 
   @include breakpoint($medium) {
     flex-basis: 9em;
@@ -267,13 +364,13 @@
 
 .cv-entry__detail {
   color: var(--global-text-color-light);
-  font-size: $type-size-6;
+  font-size: $academic-meta-size;
 }
 
 .cv-list--compact {
   .cv-entry {
-    margin-bottom: 0.5em;
-    font-size: $type-size-6;
+    margin-bottom: 0.55em;
+    font-size: $academic-meta-size;
   }
 }
 
@@ -284,6 +381,7 @@
 .collaborator-list {
   margin: 0;
   padding-left: 1.2em;
+  font-size: $academic-meta-size;
   columns: 2;
   column-gap: 2em;
 

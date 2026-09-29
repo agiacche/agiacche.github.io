@@ -7,29 +7,26 @@ author_profile: true
 ---
 
 {% include base_path %}
-<aside class="sidebar__right">
-  <nav class="toc">
-    <header>
-      <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-    </header>
-    <ul class="toc__menu">
-      {% if site.publication_category %}
-        {% for category in site.publication_category %}
-          <li><a href="#{{ category[1].title | slugify }}" class="nav__link">{{ category[1].title }}</a></li>
-        {% endfor %}
-      {% endif %}
-      <li><a href="#collaborators" class="nav__link">Collaborators</a></li>
-    </ul>
-  </nav>
-</aside>
+{% assign sorted_publications = site.publications | sort: 'date' | reverse %}
+{% assign toc_labels = "" | split: "," %}
+{% if site.publication_category %}
+  {% for category in site.publication_category %}
+    {% assign in_category = sorted_publications | where: "category", category[0] %}
+    {% if in_category.size > 0 %}
+      {% assign one_label = category[1].title | split: "|" %}
+      {% assign toc_labels = toc_labels | concat: one_label %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign collaborators_label = "Collaborators" | split: "|" %}
+{% assign toc_labels = toc_labels | concat: collaborators_label %}
+{% include page-toc.html labels=toc_labels %}
 
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
 <!-- New style rendering if publication categories are defined -->
-{% assign sorted_publications = site.publications | sort: 'date' | reverse %}
-
 <div class="pub-list">
 {% if site.publication_category %}
   {% for category in site.publication_category %}
@@ -55,25 +52,8 @@ author_profile: true
 <h2 id="collaborators">Collaborators</h2>
 
 <ul class="collaborator-list">
-  <li><a href="https://portal.findresearcher.sdu.dk/en/persons/j%C3%B8rgen-ellegaard-andersen" target="_blank">Jørgen Ellegaard Andersen</a></li>
-  <li><a href="https://sites.google.com/view/simonbarazer/" target="_blank">Simon Barazer</a></li>
-  <li><a href="https://www.mathematik.hu-berlin.de/de/forschung/forschungsgebiete/mathematische-physik/borot-mp-homepage" target="_blank">Gaëtan Borot</a></li>
-  <li><a href="https://sites.ualberta.ca/~vbouchar/" target="_blank">Vincent Bouchard</a></li>
-  <li><a href="https://scharbon.cygale.net/" target="_blank">Séverin Charbonnier</a></li>
-  <li><a href="https://www.maths.ed.ac.uk/~nchidamb/" target="_blank">Nitin Kumar Chidambaram</a></li>
-  <li><a href="https://rodericguigocorominas.github.io/" target="_blank">Roderic Guigo Corominas</a></li>
-  <li><a href="http://www.labri.fr/perso/vdelecro/" target="_blank">Vincent Delecroix</a></li>
-  <li><a href="http://bertrand.eynard.free.fr/" target="_blank">Bertrand Eynard</a></li>
-  <li><a href="https://elbagarciafailde.wixsite.com/math" target="_blank">Elba Garcia‑Failde</a></li>
-  <li><a href="https://inspirehep.net/authors/1633516" target="_blank">Paolo Gregori</a></li>
-  <li><a href="https://www.linkedin.com/in/baran-hashemi/" target="_blank">Baran Hashemi</a></li>
-  <li><a href="https://sites.ualberta.ca/~reinier/home" target="_blank">Reinier Kramer</a></li>
-  <li><a href="https://sites.google.com/view/danilolewanski/" target="_blank">Danilo Lewański</a></li>
-  <li><a href="https://www.math.univ-paris13.fr/~mingkun.liu/" target="_blank">Mingkun Liu</a></li>
-  <li><a href="https://researchers.ms.unimelb.edu.au/~norbury@unimelb/" target="_blank">Paul Norbury</a></li>
-  <li><a href="http://sauvaget.perso.math.cnrs.fr/index.html" target="_blank">Adrien Sauvaget</a></li>
-  <li><a href="https://yannikschuler.github.io/" target="_blank">Yannik Schüler</a></li>
-  <li><a href="https://scholar.google.com.sg/citations?user=yON45egAAAAJ&hl=en" target="_blank">Sergey Shadrin</a></li>
-  <li><a href="https://scholar.google.com/citations?user=rLAPSfIAAAAJ&hl=en" target="_blank">Giacomo Umer</a></li>
-  <li><a href="https://www.ihes.fr/~wheeler/" target="_blank">Campbell Wheeler</a></li>
+  {% assign sorted_collaborators = site.data.collaborators | sort: "sort_key" %}
+  {% for person in sorted_collaborators %}
+    <li><a href="{{ person.url }}" target="_blank" rel="noopener noreferrer">{{ person.name }}</a></li>
+  {% endfor %}
 </ul>

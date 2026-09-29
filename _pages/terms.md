@@ -5,7 +5,8 @@ title_tag: "Terms and Privacy Policy"
 ---
 
 {% include base_path %}
-{% include toc %}
+{% assign toc_labels = "Privacy Policy,Log Files,Cookies and Web Beacons,Google Analytics" | split: "," %}
+{% include page-toc.html labels=toc_labels %}
 
 ## Privacy Policy
 

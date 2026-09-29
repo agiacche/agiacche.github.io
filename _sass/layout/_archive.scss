@@ -14,14 +14,24 @@
     @include prefix(0.5 of 12);
   }
 
+  // See the matching comment in _sass/layout/_page.scss: no underline by
+  // default (the blue link color already signals "this is a link"),
+  // revealed on :hover only for pointers that support hovering, and always
+  // on keyboard focus.
   a {
-    text-decoration: underline;
+    text-decoration: none;
 
-    &:hover {
+    &:focus-visible {
       text-decoration: underline;
+    }
 
-      img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration: underline;
+
+        img {
+          box-shadow: 0 0 10px rgba(#000, 0.25);
+        }
       }
     }
   }
@@ -74,13 +84,18 @@
   }
 }
 
+// Only the teaser image gets a hover affordance here - the title link's
+// own hover/focus underline (color + timing consistent with every other
+// link on the site) comes from the shared `.archive a` rule instead. This
+// used to also force `text-decoration: underline` on `.archive__item-title`
+// whenever the mouse was anywhere over the card, which (a) wasn't gated by
+// `@media (hover: hover)` so it didn't fade the way the rest of the site's
+// links do, and (b) painted the underline in the heading's own text color
+// (light/white in dark mode) rather than the link color, instead of
+// tracking the anchor itself.
 .archive__item:hover {
   .archive__item-teaser {
     box-shadow: 0 0 10px rgba(#000, 0.25);
-  }
-
-  .archive__item-title {
-    text-decoration: underline;
   }
 }
 

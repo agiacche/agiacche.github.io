@@ -1,0 +1,119 @@
+{% comment %}
+  Compact "On this page" navigation, shared by every page with a handful
+  of named sections (CV, publications, terms).
+
+  Renders as one native <details> disclosure, so it needs no JavaScript
+  to open or close and gets keyboard/focus support for free. Below the
+  $large breakpoint it sits inline in the content flow as a small
+  collapsible block (default open, tap the heading to tuck it away) and
+  never narrows the readable text column. At $large and up the same
+  markup instead becomes a small dropdown pinned to the top-right corner
+  of the masthead, clear of the content column entirely (see
+  _sass/layout/_page-toc.scss for why - it used to float inside the
+  content column itself, which crowded the text) - no separate
+  mobile/desktop markup to keep in sync.
+
+  A tiny optional scroll-driven script highlights whichever section is
+  currently in view (the last heading that has scrolled above a
+  reference line near the top of the viewport - the standard
+  "scrollspy" approach, chosen over IntersectionObserver because the
+  targets are single-line headings rather than tall sections, so a
+  narrow observation band would sit empty most of the time). It's
+  additive only: with JS unavailable the list is still a fully working
+  set of anchor links.
+
+  Usage:
+    {% include page-toc.html labels=page.toc_sections %}
+  `labels` is a flat array of heading text strings, in the order they
+  appear on the page. Anchor targets are derived with the same
+  `slugify` filter that produces Jekyll heading ids and kramdown
+  auto_ids, so there's no separate id list to keep in sync.
+{% endcomment %}
+<nav class="page-toc" aria-label="On this page">
+  <details class="page-toc__disclosure">
+    <summary class="page-toc__summary">On this page</summary>
+    <ul class="page-toc__list">
+      {% for label in include.labels %}
+        <li><a href="#{{ label | slugify }}" class="page-toc__link">{{ label }}</a></li>
+      {% endfor %}
+    </ul>
+  </details>
+</nav>
+<script>
+(function () {
+  // Captured synchronously, while this script is still document.currentScript
+  // (the nav above it already exists in the DOM at this point). Everything
+  // that depends on the *heading* elements has to wait for DOMContentLoaded
+  // instead: this include is placed before the page's actual content (so the
+  // ToC appears first), which means the headings it links to haven't been
+  // parsed into the DOM yet when this script tag itself runs.
+  var toc = document.currentScript.previousElementSibling;
+  if (!toc || !toc.classList.contains("page-toc")) { return; }
+
+  // No `open` attribute in the markup above: whether it should start open
+  // depends on which of the two very different layouts it's rendering as
+  // (see _sass/layout/_page-toc.scss), which is a CSS-breakpoint question
+  // that only JS can answer for an HTML attribute like this. Below $large
+  // it's an inline block and starts open, per the include's own doc
+  // comment. At $large and up it's a masthead dropdown and, like any other
+  // menu, should start closed. Set synchronously (script execution blocks
+  // parsing here) so there's no flash of the wrong state. 925px mirrors
+  // $large in _sass/_themes.scss - keep the two in sync if that changes.
+  var disclosure = toc.querySelector(".page-toc__disclosure");
+  if (disclosure) {
+    disclosure.open = !window.matchMedia("(min-width: 925px)").matches;
+  }
+
+  function init() {
+    var links = Array.prototype.slice.call(toc.querySelectorAll(".page-toc__link"));
+    var targets = links.map(function (link) {
+      var el = document.getElementById(link.getAttribute("href").slice(1));
+      return el ? { el: el, link: link } : null;
+    }).filter(Boolean);
+    if (!targets.length) { return; }
+
+    var REFERENCE = 100; // roughly the masthead's own height, so a heading counts as "current" once it's scrolled just past it
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var current = null;
+      // At the very bottom of the page there may not be enough room left
+      // below the last heading for it to ever cross the reference line
+      // (e.g. a short final section), so it would otherwise never light
+      // up. Treat "scrolled to the bottom" as "last section is current".
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atBottom) {
+        current = targets[targets.length - 1];
+      } else {
+        for (var i = 0; i < targets.length; i++) {
+          if (targets[i].el.getBoundingClientRect().top - REFERENCE <= 0) {
+            current = targets[i];
+          } else {
+            break;
+          }
+        }
+      }
+      targets.forEach(function (t) {
+        t.link.classList.toggle("is-active", t === current);
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>

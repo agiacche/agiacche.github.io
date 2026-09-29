@@ -10,6 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-{% include toc %}
+{% assign toc_labels = "Employment,Education,Publications and preprints,Teaching,Organization of events,Honours" | split: "," %}
+{% include page-toc.html labels=toc_labels %}
 
 {% include cv-content.html %}

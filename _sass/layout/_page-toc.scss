@@ -1,0 +1,172 @@
+/* ==========================================================================
+   "ON THIS PAGE" NAVIGATION
+   A single small component (see _includes/page-toc.html) used on the CV,
+   publications, and terms pages. Deliberately restrained: no dark header
+   bar, no box-shadow, no all-caps - just a quiet list of links that gets
+   out of the way of the actual content.
+   ========================================================================== */
+
+.page-toc {
+  margin: 0 0 1.75em;
+  font-family: $sans-serif;
+
+  // Below $large this sits in the normal content flow as a small
+  // collapsible block (see the width/position rules that follow, all
+  // scoped to $large and up). At $large it moves out of the content flow
+  // entirely: it used to float right *inside* .page__content, which -
+  // because that column is already narrowed to make room for the
+  // author-profile sidebar - meant the floated box and the sticky
+  // positioning fought the sidebar for the same cramped strip of space,
+  // reading as a box dropped in the middle of the text and squeezing
+  // paragraphs/CV entries around it. `position: fixed` instead pins it to
+  // the masthead's own row, clear of the content column altogether.
+  @include breakpoint($large) {
+    position: fixed;
+    top: 0;
+    // Same right inset as .masthead__inner-wrap / #main (1em, growing to
+    // keep pace with their centered $x-large container on very wide
+    // screens) plus a cushion roughly the width of the greedy-nav's
+    // hamburger button, so this never sits under it on a narrow desktop
+    // window where the masthead links have collapsed into that button.
+    right: max(3.5em, calc((100vw - #{$x-large}) / 2 + 3.5em));
+    z-index: 21; // above .masthead (20)
+    display: flex;
+    align-items: center;
+    height: $masthead-height;
+    width: auto;
+    margin: 0;
+  }
+}
+
+.page-toc__summary {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 0;
+  color: var(--global-text-color-light);
+  font-size: $academic-label-size;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    content: "▸";
+    display: inline-block;
+    font-size: 0.85em;
+    transition: transform 0.15s ease-in-out;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-link-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  // At $large+ this is the only visible part of .page-toc until opened -
+  // give it the look of a small menu-bar control (pill outline) rather
+  // than a bare label, so it reads as part of the masthead chrome.
+  @include breakpoint($large) {
+    padding: 0.4em 0.75em;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+  }
+}
+
+.page-toc__disclosure[open] > .page-toc__summary::before {
+  transform: rotate(90deg);
+}
+
+.page-toc__list {
+  margin: 0 0 0.25em;
+  padding: 0.25em 0 0.25em 0.9em;
+  list-style: none;
+  border-left: 2px solid var(--global-border-color);
+
+  // Below $large, .page-toc__disclosure is a normal in-flow block and this
+  // list simply expands underneath it. At $large+, .page-toc is fixed and
+  // only as wide as the pill above, so the list is pulled out into its own
+  // floating dropdown panel - same visual language as the theme's other
+  // menu-triggered popovers (.hidden-links in _navigation.scss,
+  // .author__urls in _sidebar.scss): anchored to the top-right of the
+  // trigger, with a border/shadow/arrow instead of the inline left rule.
+  @include breakpoint($large) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.6em;
+    max-height: calc(100vh - #{$masthead-height} - 2em);
+    width: 260px;
+    overflow-y: auto;
+    padding: 0.5em 0.9em;
+    border: none;
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+    box-shadow: 0 0 10px rgba(#000, 0.25);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -11px;
+      right: 14px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: var(--global-border-color) transparent;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 14px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: var(--global-bg-color) transparent;
+    }
+  }
+}
+
+.page-toc__disclosure {
+  @include breakpoint($large) {
+    position: relative;
+  }
+}
+
+// Specificity note: .archive a (see _archive.scss) is a two-component
+// selector (one class + the `a` element), which beats a single
+// .page-toc__link class - relevant on hover-capable pointers, where
+// .archive a reveals its own underline. Qualifying with the .page-toc
+// ancestor (also two components) is enough to win without !important, so
+// this list keeps its own left-rule-based "current section" styling
+// instead of picking up a stray underline.
+.page-toc .page-toc__link {
+  display: block;
+  padding: 0.3em 0;
+  color: var(--global-text-color-light);
+  font-size: $academic-label-size;
+  line-height: 1.4;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-link-color);
+  }
+
+  &.is-active {
+    color: var(--global-text-color);
+    font-weight: 700;
+  }
+}

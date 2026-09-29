@@ -72,14 +72,29 @@
     }
   }
 
+  // Default: color alone (already blue via var(--global-link-color), see
+  // _reset.scss) signals a link; the underline is reserved as a hover/focus
+  // affordance rather than shown all the time, so prose reads less
+  // cluttered. `@media (hover: hover) and (pointer: fine)` scopes the
+  // hover-reveal to devices that actually have a hover-capable pointer
+  // (mouse/trackpad) - on touch devices there's no hover to reveal it on,
+  // so links there just stay their plain blue, same as most mobile UIs.
+  // Keyboard focus (:focus-visible) always shows the underline, on every
+  // device, since it doesn't depend on a pointer at all.
   a {
-    text-decoration: underline;
+    text-decoration: none;
 
-    &:hover {
+    &:focus-visible {
       text-decoration: underline;
+    }
 
-      img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration: underline;
+
+        img {
+          box-shadow: 0 0 10px rgba(#000, 0.25);
+        }
       }
     }
   }

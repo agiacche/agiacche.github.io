@@ -12,26 +12,45 @@
 {% include base_path %}
 {% assign post = include.post %}
 {% assign mode = include.mode | default: "list" %}
-{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" | strip %}
 
 {% if mode == "cv" %}
+{% assign has_links = false %}
+{% if post.arxiv or post.doi or post.pdf or post.open or post.git or post.notebook or post.slides %}{% assign has_links = true %}{% endif %}
 <li class="pub-item pub-item--cv">
-  <span class="pub-item__title"><a href="{{ base_path }}{{ post.url }}">{{ title }}</a></span>
-  {% include pub-meta.html post=post %}
-  {% include pub-links.html post=post %}
+  <span class="pub-item__title">{{ title }}</span>,
+  {% include pub-meta.html post=post mode=mode %}
+  {%- if has_links -%}
+    <span class="pub-item__actions pub-item__actions--sep">
+      {% include pub-links.html post=post %}
+    </span>
+  {% endif %}
 </li>
 {% else %}
 <article class="pub-item pub-item--list" itemscope itemtype="http://schema.org/ScholarlyArticle">
   <h3 class="pub-item__title" itemprop="headline">
     <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
   </h3>
-  {% include pub-meta.html post=post %}
-  {% include pub-links.html post=post %}
-  {% if post.excerpt %}
-    <details class="pub-item__abstract">
-      <summary>Abstract</summary>
-      <div class="pub-item__abstract-body" itemprop="description">{{ post.excerpt | markdownify }}</div>
-    </details>
-  {% endif %}
+  {% include pub-meta.html post=post mode=mode %}
+  {% comment %}
+    Abstract is deliberately the LAST item in the action row: see the
+    comment in _sass/layout/_academic.scss for why anything placed after
+    it in source order would get pushed below the expanded abstract body.
+
+    The body shown here is the publication's full abstract (post.content -
+    the main body of the _publications/*.md file), not post.excerpt. The
+    excerpt is a short, hand-written blurb used elsewhere (e.g. tag/search
+    listings); since this is a disclosure the reader opens on purpose,
+    there's no space constraint that would justify truncating it.
+  {% endcomment %}
+  <div class="pub-item__actions">
+    {% include pub-links.html post=post %}
+    {% if post.content != empty %}
+      <details class="pub-item__abstract">
+        <summary>Abstract</summary>
+        <div class="pub-item__abstract-body" itemprop="description">{{ post.content }}</div>
+      </details>
+    {% endif %}
+  </div>
 </article>
 {% endif %}
